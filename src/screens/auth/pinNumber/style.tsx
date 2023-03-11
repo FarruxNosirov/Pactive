@@ -1,0 +1,106 @@
+import {StyleSheet} from 'react-native';
+import {COLORS} from '../../../constants/Colors';
+
+export const styles = StyleSheet.create({
+  screenWrapper: {
+    width: '100%',
+    height: '100%',
+  },
+  signInContentWrapper: {
+    flex: 1,
+    backgroundColor: 'transparent',
+    justifyContent: 'center',
+    alignItems: 'center',
+    top: 0,
+    width: '100%',
+    padding: 10,
+    paddingTop: 100,
+  },
+  registerHeadline: {
+    fontSize: 24,
+    color: '#16E9A3',
+    marginBottom: 16,
+    textAlign: 'center',
+    marginTop: 24,
+  },
+  registerHeadlineCopy: {
+    textAlign: 'center',
+    marginBottom: 16,
+    fontSize: 16,
+    color: '#fff',
+  },
+  registerHeadlineLabel: {
+    textAlign: 'center',
+    marginBottom: 6,
+    fontSize: 14,
+    color: '#fff',
+  },
+  signInContentResend: {
+    paddingBottom: 16,
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  signInContentResendChangeLink: {
+    textDecorationLine: 'underline',
+    textDecorationStyle: 'solid',
+    textDecorationColor: '#fff',
+    textAlign: 'center',
+    marginBottom: 6,
+    fontSize: 14,
+    color: '#fff',
+  },
+  inputLabel: {
+    textAlign: 'center',
+    marginBottom: 6,
+    marginTop: 20,
+    fontSize: 14,
+    color: '#fff',
+  },
+  buttonPrimary: {
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {width: 0, height: 2},
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    backgroundColor: COLORS.pactiveGreen,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingHorizontal: 20,
+    borderRadius: 2,
+    elevation: 6,
+    alignSelf: 'center',
+    height: 'auto',
+    width: '100%',
+  },
+  buttonFull: {
+    width: '100%',
+  },
+  buttonPrimaryLabel: {
+    fontSize: 16,
+    color: '#fff',
+    textTransform: 'uppercase',
+
+    lineHeight: 20,
+    textAlign: 'center',
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  codeFieldRoot: {marginTop: 10},
+  number_box: {
+    width: 49,
+    height: 49,
+    marginHorizontal: 4,
+    borderWidth: 2,
+    borderColor: COLORS.white,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  cell: {
+    fontSize: 25,
+    color: COLORS.white,
+  },
+});
