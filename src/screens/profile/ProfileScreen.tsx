@@ -1,11 +1,16 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import Imagebacground from '../../components/Imagebacground';
 import {COLORS} from '../../constants/Colors';
 import BottomHeight from '../../components/BottomHeight';
 import ProfileCart from './components/ProfileCart';
 import {ProfileIconActive, RightArrow} from '../../assets/icons/iconst';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 import NavigationService from '../../navigation/NavigationScren';
 
 const ProfileScreen = () => {

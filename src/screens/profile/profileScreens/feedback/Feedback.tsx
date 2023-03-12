@@ -7,6 +7,7 @@ import {Rating} from 'react-native-ratings';
 import LinearGradient from 'react-native-linear-gradient';
 import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
 import DefaultInput from '../../../../components/defaultInput/DefaultInput';
+import NavigationService from '../../../../navigation/NavigationScren';
 
 const Feedback = () => {
   const [rate, setRate] = useState(0);
@@ -36,7 +37,11 @@ const Feedback = () => {
 
   return (
     <View style={styles.container}>
-      <GoBacknavbar backgroundColor={COLORS.fixedHeaderBg} name="Cancel" />
+      <GoBacknavbar
+        backgroundColor={COLORS.fixedHeaderBg}
+        name="Cancel"
+        onPress={() => NavigationService.goBack()}
+      />
       <ScrollView>
         <Imagebacground
           imageUrl={require('../../../../assets/images/heroImages/home-hero-small.png')}
@@ -125,5 +130,8 @@ const styles = StyleSheet.create({
   titleText: {
     textAlign: 'center',
     marginBottom: 20,
+    // color: 'red',
+    fontFamily: 'Abel-Regular',
+    // fontFamily: 'Quicksand-Bold',
   },
 });
