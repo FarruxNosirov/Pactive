@@ -1,6 +1,5 @@
 import {
   Dimensions,
-  FlatList,
   Image,
   ImageBackground,
   StyleSheet,
@@ -9,40 +8,41 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {COLORS} from '../../../../constants/Colors';
-import PactItemCart from '../../../../components/PactItemCart';
-const data = [
-  {id: 0, name: 'salom salom salom salom '},
-  {id: 1, name: 'salom salom salom salom '},
-  {id: 2, name: 'salom salom'},
-  {id: 3, name: 'salom'},
-];
+import Imagebacground from './Imagebacground';
+import {COLORS} from '../constants/Colors';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TILE_WIDTH = Math.floor(SCREEN_WIDTH / 2) - 15;
 const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);
-const SocialPacts = () => {
+
+type propsType = {
+  name?: string;
+};
+
+const PactItemCart = (props: propsType) => {
   return (
-    <FlatList
-      ListHeaderComponent={
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>Social Pacts</Text>
-          <TouchableOpacity>
-            <Text style={styles.link}>View All</Text>
-          </TouchableOpacity>
+    <TouchableOpacity style={styles.tile}>
+      <View style={styles.iconstContent}>
+        <View style={styles.iconst}>
+          <Image
+            style={styles.iconst_img}
+            source={require('../assets/images/allImage/bootsplash_logo.png')}
+          />
         </View>
-      }
-      style={styles.container}
-      data={data}
-      numColumns={2}
-      renderItem={({item}) => {
-        return <PactItemCart name={item.name} />;
-      }}
-      keyExtractor={(item, index) => index.toString()}
-    />
+        <Text style={{color: COLORS.pactiveGreen}}>Pactive</Text>
+      </View>
+      <View style={styles.imageBgWrap}>
+        <Imagebacground
+          imageUrl={require('../assets/images/heroImages/account-hero.png')}
+        />
+      </View>
+      <View style={styles.textContent}>
+        <Text style={styles.titleText}>{props.name}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
-export default SocialPacts;
+export default PactItemCart;
 
 const styles = StyleSheet.create({
   container: {

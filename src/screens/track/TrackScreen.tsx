@@ -1,6 +1,12 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+
 import {RightArrow} from '../../assets/icons/iconst';
 import ButtomHeght from '../../components/BottomHeight';
 import Imagebacground from '../../components/Imagebacground';

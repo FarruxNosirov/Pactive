@@ -74,6 +74,7 @@ const ProfileScreen = () => {
           icon={<ProfileIconActive fill={COLORS.white} />}
           iconBackgroundColor={COLORS.black}
           text="Delete account"
+          onPress={() => NavigationService.navigate('DeleteAccount')}
         />
         <BottomHeight height={50} />
       </ScrollView>

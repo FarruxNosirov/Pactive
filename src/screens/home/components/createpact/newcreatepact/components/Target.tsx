@@ -3,12 +3,13 @@ import {
   Platform,
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../../../../constants/Colors';
-import {TextInput} from 'react-native-gesture-handler';
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 type propsType = {
   inputValue?: string | undefined;

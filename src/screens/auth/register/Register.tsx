@@ -1,7 +1,14 @@
 import React, {useState} from 'react';
-import {Platform, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Platform,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
+
 import {Switch} from 'react-native-switch';
 import ButtomHeght from '../../../components/BottomHeight';
 import DefaultButton from '../../../components/DefaultButton/DefaultButton';

@@ -14,6 +14,7 @@ import TabStacks from './stacks/TabStacks';
 import CreatePactScreen from '../screens/home/components/createpact/newcreatepact/CreatePactScreen';
 import Account from '../screens/profile/profileScreens/account/Account';
 import Feedback from '../screens/profile/profileScreens/feedback/Feedback';
+import DeleteAccount from '../screens/profile/profileScreens/deleteAccount/DeleteAccount';
 
 let Stack = createNativeStackNavigator();
 const AllNavigation = () => {
@@ -31,6 +32,10 @@ const AllNavigation = () => {
           />
           <Stack.Screen name={AllRoutes.Account} component={Account} />
           <Stack.Screen name={AllRoutes.Feedback} component={Feedback} />
+          <Stack.Screen
+            name={AllRoutes.DeleteAccount}
+            component={DeleteAccount}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

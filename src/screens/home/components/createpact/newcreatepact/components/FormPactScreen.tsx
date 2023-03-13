@@ -1,9 +1,15 @@
 import React, {useState} from 'react';
-import {Platform, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import DefaultInput from '../../../../../../components/defaultInput/DefaultInput';
 import {COLORS} from '../../../../../../constants/Colors';
 import DatePicker from 'react-native-date-picker';
-import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const FormPactScreen = () => {
   const [open, setOpen] = useState({

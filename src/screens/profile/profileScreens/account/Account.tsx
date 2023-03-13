@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
-import {Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import DatePicker from 'react-native-date-picker';
-import {ScrollView, TextInput} from 'react-native-gesture-handler';
+
 import {Switch} from 'react-native-switch';
 
 import {useNavigation} from '@react-navigation/native';

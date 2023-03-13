@@ -1,4 +1,4 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import GoBacknavbar from '../../../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../../../constants/Colors';
@@ -8,6 +8,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
 import DefaultInput from '../../../../components/defaultInput/DefaultInput';
 import NavigationService from '../../../../navigation/NavigationScren';
+import Text from '../../../../constants/Text';
 
 const Feedback = () => {
   const [rate, setRate] = useState(0);
@@ -130,8 +131,5 @@ const styles = StyleSheet.create({
   titleText: {
     textAlign: 'center',
     marginBottom: 20,
-    // color: 'red',
-    fontFamily: 'Abel-Regular',
-    // fontFamily: 'Quicksand-Bold',
   },
 });
