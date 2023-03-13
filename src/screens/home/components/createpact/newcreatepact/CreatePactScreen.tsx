@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Image,
+  FlatList,
 } from 'react-native';
 import React, {useState} from 'react';
 import {COLORS} from '../../../../../constants/Colors';
@@ -19,7 +20,6 @@ import {PenIcon} from '../../../../../assets/icons/iconst';
 import FormPactScreen from './components/FormPactScreen';
 import ButtomHeght from '../../../../../components/BottomHeight';
 
-import {FlatList} from 'react-native-gesture-handler';
 import ActivityCart from './components/ActivityCart';
 import {
   Walking,

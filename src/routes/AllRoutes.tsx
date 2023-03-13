@@ -18,4 +18,9 @@ export const AllRoutes = {
   CreatePactScreen: 'CreatePactScreen',
   Account: 'Account',
   Feedback: 'Feedback',
+  DeleteAccount: 'DeleteAccount',
+  Active: 'Active',
+  Invites: 'Invites',
+  Social: 'Social',
+  PactActiveAll: 'PactActiveAll',
 };

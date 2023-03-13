@@ -1,7 +1,14 @@
 import React, {useRef, useState} from 'react';
-import {ImageBackground, Linking, Text, TextInput, View} from 'react-native';
+import {
+  ImageBackground,
+  Linking,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {styles} from './style';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import PhoneInput from 'react-native-phone-number-input';
 import {CountryCode} from 'react-native-country-picker-modal';
 import {useNavigation} from '@react-navigation/native';

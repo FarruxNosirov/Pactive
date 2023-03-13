@@ -193,8 +193,8 @@ export const ProfileIconNotActive = (props: SvgProps) => {
 export function PlusIcon(props: SvgProps) {
   return (
     <Svg
-      width={20}
-      height={20}
+      width={15}
+      height={15}
       viewBox="0 0 19 19"
       fill="none"
       //@ts-ignore
@@ -256,6 +256,37 @@ export function RightArrow(props: SvgProps) {
       <Path
         d="M2 0L.59 1.41 5.17 6 .59 10.59 2 12l6-6-6-6z"
         fill={props?.fill}
+      />
+    </Svg>
+  );
+}
+export function MinusIcon(props: SvgProps) {
+  return (
+    <Svg
+      width={10}
+      height={10}
+      viewBox="0 0 13 3"
+      fill="none"
+      //@ts-ignore
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path d="M.032 2.25V0h12.184v2.25H.032z" fill={props?.fill} />
+    </Svg>
+  );
+}
+export function EditIcon(props: SvgProps) {
+  return (
+    <Svg
+      width={16}
+      height={16}
+      viewBox="0 0 16 16"
+      fill="none"
+      //@ts-ignore
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}>
+      <Path
+        d="M5.256 14.422L13 6.678 9.322 3l-7.744 7.744a.836.836 0 00-.22.387L.5 15.5l4.368-.858a.835.835 0 00.388-.22zM15.5 4.178a1.666 1.666 0 000-2.356L14.178.5a1.667 1.667 0 00-2.356 0L10.5 1.822 14.178 5.5 15.5 4.178z"
+        fill="#0052FF"
       />
     </Svg>
   );

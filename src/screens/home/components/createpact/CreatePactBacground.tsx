@@ -6,8 +6,7 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {COLORS} from '../../../../constants/Colors';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import {useNavigation} from '@react-navigation/native';
 import {AllRoutes} from '../../../../routes/AllRoutes';
 import NavigationService from '../../../../navigation/NavigationScren';

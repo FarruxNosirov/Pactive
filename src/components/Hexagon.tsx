@@ -1,17 +1,15 @@
 // @flow
 
-import Svg, {
-  Path,
-  Defs,
-  LinearGradient,
-  Stop,
-  G,
-  ClipPath,
-  Image,
-} from 'react-native-svg';
 import {StyleSheet, Text, View} from 'react-native';
-import {PenIcon} from '../assets/icons/iconst';
-import {COLORS} from '../constants/Colors';
+import Svg, {
+  ClipPath,
+  Defs,
+  G,
+  Image,
+  LinearGradient,
+  Path,
+  Stop,
+} from 'react-native-svg';
 
 const width = 173.20508075688772;
 const height = 200;
@@ -29,6 +27,7 @@ type propsType = {
   borderWidth?: number;
   opacity?: any;
   icon?: any;
+  label?: string;
 };
 const Hexagon = (props: propsType) => {
   const {
@@ -99,7 +98,14 @@ const Hexagon = (props: propsType) => {
           </G>
         ) : null}
       </Svg>
-      <View style={styles.hexagonContent}>{props?.icon}</View>
+      <View style={styles.hexagonContent}>
+        {props?.icon ? <View>{props.icon}</View> : null}
+        {props.label ? (
+          <Text allowFontScaling={false} style={styles.hexagonContentLabel}>
+            {props?.label}
+          </Text>
+        ) : null}
+      </View>
     </View>
   );
 };
@@ -115,6 +121,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 1.41,
     elevation: 2,
+    marginHorizontal: 5,
   },
   svg: {
     position: 'absolute',
@@ -139,5 +146,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     textAlign: 'center',
     width: '80%',
+    textTransform: 'uppercase',
   },
 });

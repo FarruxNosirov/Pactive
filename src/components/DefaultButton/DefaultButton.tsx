@@ -9,7 +9,7 @@ import {
 import {COLORS} from '../../constants/Colors';
 
 type Props = {
-  title: string;
+  title?: string;
   onPress?: (event: GestureResponderEvent) => void;
   loading?: boolean;
   disabled?: boolean;
