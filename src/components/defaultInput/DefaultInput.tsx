@@ -2,7 +2,6 @@ import {
   Platform,
   StyleProp,
   StyleSheet,
-  Text,
   TextInput,
   TextStyle,
   View,
@@ -10,6 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import {COLORS} from '../../constants/Colors';
+import Text from '../../constants/Text';
 type propsType = {
   error?: string;
   title?: string;
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
   inputLabel: {
     color: COLORS.textColor,
     textTransform: 'uppercase',
+    fontWeight: 'bold',
   },
   inputField: {
     color: COLORS.textColor,

@@ -23,4 +23,6 @@ export const AllRoutes = {
   Invites: 'Invites',
   Social: 'Social',
   PactActiveAll: 'PactActiveAll',
+  EditPact: 'EditPact',
+  ClosePact: 'ClosePact',
 };
