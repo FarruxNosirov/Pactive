@@ -8,20 +8,19 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import DatePicker from 'react-native-date-picker';
 
 import {Switch} from 'react-native-switch';
 
 import {useNavigation} from '@react-navigation/native';
 import {launchImageLibrary} from 'react-native-image-picker';
+import BirthDay from '../../../../components/BirthDay';
 import BottomHeight from '../../../../components/BottomHeight';
 import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
 import ImageEdit from '../../../../components/ImageEdit';
 import Imagebacground from '../../../../components/Imagebacground';
+import DefaultInput from '../../../../components/defaultInput/DefaultInput';
 import GoBacknavbar from '../../../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../../../constants/Colors';
-import DefaultInput from '../../../../components/defaultInput/DefaultInput';
-import DataOfBirth from '../../../../components/DataOfBirth';
 
 const DATA = [
   {
@@ -147,12 +146,13 @@ const Account = (props: any) => {
           />
           {/* DATE OF BIRTH */}
 
-          <DataOfBirth
+          <BirthDay
             date={date}
             setOpenDate={setOpenDate}
             openDate={openDate}
             setDate={setDate}
           />
+
           {/* GENDER */}
           <View style={{marginBottom: 30, marginTop: 30}}>
             <Text style={styles.inputLabel}>GENDER</Text>

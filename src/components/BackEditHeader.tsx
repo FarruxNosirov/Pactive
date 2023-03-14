@@ -1,34 +1,80 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
-import GoBacknavbar from './gobacknavbar/goBacknavbar';
+import React, {useState} from 'react';
+import {Modal, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../constants/Colors';
-import {EditIcon, RightArrow} from '../assets/icons/iconst';
+
+import IconDesign from 'react-native-vector-icons/AntDesign';
+import IconEntypo from 'react-native-vector-icons/Entypo';
+import Text from '../constants/Text';
+import NavigationService from '../navigation/NavigationScren';
+
 type propsType = {
   onBackPress?: () => void | undefined;
   name?: string;
   backgroundColor?: string;
   position?: string;
-  onPressEdit?: () => void | undefined;
 };
+
 const BackEditHeader = (props: propsType) => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const EditHandler = () => {
+    NavigationService.navigate('EditPact');
+    setModalVisible(false);
+  };
+  const CloseHandler = () => {
+    NavigationService.navigate('ClosePact');
+    setModalVisible(false);
+  };
   return (
-    <View
-      style={[
-        styles.header,
-        {
-          backgroundColor: props.backgroundColor ? props.backgroundColor : '',
-        },
-      ]}>
-      <TouchableOpacity
-        onPress={props.onBackPress}
-        style={{flexDirection: 'row', alignItems: 'center'}}>
-        <RightArrow fill={COLORS.white} />
-        <Text style={styles.header_title}>{props.name}</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={props.onPressEdit}>
-        <EditIcon fill={COLORS.white} />
-      </TouchableOpacity>
-    </View>
+    <>
+      <View
+        style={[
+          styles.header,
+          {
+            backgroundColor: props.backgroundColor ? props.backgroundColor : '',
+          },
+        ]}>
+        <TouchableOpacity
+          onPress={props.onBackPress}
+          style={{flexDirection: 'row', alignItems: 'center'}}>
+          <IconEntypo
+            name="chevron-thin-left"
+            style={{color: 'white', fontSize: 20}}
+          />
+          <Text style={styles.header_title}>{props.name}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
+          <IconDesign name="ellipsis1" style={{color: '#fff', fontSize: 30}} />
+        </TouchableOpacity>
+      </View>
+
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}>
+        <View
+          style={{
+            backgroundColor: COLORS.white,
+            width: 130,
+            height: 80,
+            position: 'absolute',
+            right: 20,
+            top: 60,
+            borderRadius: 5,
+            justifyContent: 'space-around',
+            paddingLeft: 20,
+          }}>
+          <TouchableOpacity onPress={EditHandler}>
+            <Text>Edit Pact</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={CloseHandler}>
+            <Text>Close Pact</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
+    </>
   );
 };
 
@@ -47,6 +93,16 @@ const styles = StyleSheet.create({
   header_title: {
     color: COLORS.white,
     textTransform: 'uppercase',
-    fontSize: 20,
+    fontSize: 18,
+    marginLeft: 5,
+  },
+  centeredView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    zIndex: 1,
   },
 });

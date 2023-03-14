@@ -7,11 +7,12 @@ type PropsType = {
   openDate?: any;
   setOpenDate?: any;
   setDate?: any;
+  title?: string;
 };
-const DataOfBirth = (props: PropsType) => {
+const BirthDay = (props: PropsType) => {
   return (
     <View style={styles.textInputContainer}>
-      <Text style={styles.inputLabel}>DATE OF BIRTH</Text>
+      <Text style={styles.inputLabel}>{props.title}</Text>
       <DatePicker
         modal
         mode="date"
@@ -36,7 +37,7 @@ const DataOfBirth = (props: PropsType) => {
   );
 };
 
-export default DataOfBirth;
+export default BirthDay;
 
 const styles = StyleSheet.create({
   textInputContainer: {
