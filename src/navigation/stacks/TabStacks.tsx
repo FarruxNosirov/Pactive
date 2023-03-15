@@ -17,6 +17,8 @@ import PactsStacks from './PactsStack';
 import ProfileStacks from './ProfileStack';
 import TrackStacks from './TrackStack';
 import Hexagon from '../../components/Hexagon';
+import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SimpleIcon from 'react-native-vector-icons/SimpleLineIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -40,16 +42,23 @@ const TabStacks = () => {
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center'}}>
               {focused ? (
-                <HomeIconActive fill={COLORS.pactiveBlue} />
+                <MaterialIcon
+                  name="home"
+                  style={{color: COLORS.pactiveBlue}}
+                  size={24}
+                />
               ) : (
-                <HomeIconNotActive fill={COLORS.textColor} />
+                <MaterialIcon
+                  name="home"
+                  style={{color: COLORS.textColor}}
+                  size={24}
+                />
               )}
               <Text
                 style={{
                   color: focused ? COLORS.pactiveBlue : COLORS.textColor,
-                  fontSize: 10,
+                  fontSize: 13,
                   fontWeight: '400',
-                  marginTop: 5,
                 }}>
                 Home
               </Text>
@@ -65,9 +74,17 @@ const TabStacks = () => {
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center'}}>
               {focused ? (
-                <HomeIconActive fill={COLORS.pactiveBlue} />
+                <MaterialIcon
+                  name="account-supervisor-circle"
+                  style={{color: COLORS.pactiveBlue}}
+                  size={24}
+                />
               ) : (
-                <HomeIconNotActive fill={COLORS.textColor} />
+                <MaterialIcon
+                  name="account-supervisor-circle"
+                  style={{color: COLORS.textColor}}
+                  size={24}
+                />
               )}
               <Text
                 style={{
@@ -99,6 +116,9 @@ const TabStacks = () => {
                 <Hexagon
                   size="52"
                   fill={focused ? COLORS.pactiveBlue : COLORS.pactiveGreen}
+                  icon={
+                    <SimpleIcon name="graph" size={24} color={COLORS.white} />
+                  }
                 />
               </View>
               <Text
@@ -122,9 +142,17 @@ const TabStacks = () => {
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center'}}>
               {focused ? (
-                <ProfileIconActive fill={COLORS.pactiveBlue} />
+                <MaterialIcon
+                  name="account"
+                  style={{color: COLORS.pactiveBlue}}
+                  size={24}
+                />
               ) : (
-                <ProfileIconNotActive fill={COLORS.textColor} />
+                <MaterialIcon
+                  name="account"
+                  style={{color: COLORS.textColor}}
+                  size={24}
+                />
               )}
               <Text
                 style={{
@@ -147,9 +175,17 @@ const TabStacks = () => {
           tabBarIcon: ({focused}) => (
             <View style={{alignItems: 'center'}}>
               {focused ? (
-                <HomeIconActive fill={COLORS.pactiveBlue} />
+                <MaterialIcon
+                  name="help-circle"
+                  style={{color: COLORS.pactiveBlue}}
+                  size={24}
+                />
               ) : (
-                <HomeIconNotActive fill={COLORS.textColor} />
+                <MaterialIcon
+                  name="help-circle"
+                  style={{color: COLORS.textColor}}
+                  size={24}
+                />
               )}
               <Text
                 style={{

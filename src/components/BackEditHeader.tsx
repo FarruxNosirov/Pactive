@@ -6,6 +6,8 @@ import IconDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import Text from '../constants/Text';
 import NavigationService from '../navigation/NavigationScren';
+import {useNavigation} from '@react-navigation/native';
+import {AllRoutes} from '../routes/AllRoutes';
 
 type propsType = {
   onBackPress?: () => void | undefined;
@@ -15,9 +17,11 @@ type propsType = {
 };
 
 const BackEditHeader = (props: propsType) => {
+  const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
   const EditHandler = () => {
-    NavigationService.navigate('EditPact');
+    // NavigationService.navigate('EditPact');
+    navigation.navigate(AllRoutes.EditPact as never);
     setModalVisible(false);
   };
   const CloseHandler = () => {

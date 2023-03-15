@@ -2,6 +2,7 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Imagebacground from '../../../components/Imagebacground';
 import Hexagon from '../../../components/Hexagon';
+import NavigationService from '../../../navigation/NavigationScren';
 
 const PactsHeader = () => {
   return (
@@ -39,7 +40,8 @@ const PactsHeader = () => {
               gradient={false}
               marginHorizontal={0}
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => NavigationService.navigate('CreatePactScreen')}>
               <Hexagon
                 size="90"
                 fill="#16E9A3"

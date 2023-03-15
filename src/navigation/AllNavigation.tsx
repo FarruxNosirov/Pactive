@@ -15,8 +15,10 @@ import CreatePactScreen from '../screens/home/components/createpact/newcreatepac
 import Account from '../screens/profile/profileScreens/account/Account';
 import Feedback from '../screens/profile/profileScreens/feedback/Feedback';
 import DeleteAccount from '../screens/profile/profileScreens/deleteAccount/DeleteAccount';
-import EditPact from '../screens/pacts/Department/PactActiveAll/edit_pact/EditPact';
-import ClosePact from '../screens/pacts/Department/PactActiveAll/close_pact/ClosePact';
+import EditPact from '../screens/pacts/Department/PactActiveAll/components/edit_pact/EditPact';
+import ClosePact from '../screens/pacts/Department/PactActiveAll/components/close_pact/ClosePact';
+import EditTarget from '../screens/pacts/Department/PactActiveAll/components/members/EditTarget';
+import SelectContac from '../screens/pacts/Department/PactActiveAll/components/members/SelectContac';
 
 let Stack = createNativeStackNavigator();
 const AllNavigation = () => {
@@ -40,6 +42,11 @@ const AllNavigation = () => {
           />
           <Stack.Screen name={AllRoutes.EditPact} component={EditPact} />
           <Stack.Screen name={AllRoutes.ClosePact} component={ClosePact} />
+          <Stack.Screen name={AllRoutes.EditTarget} component={EditTarget} />
+          <Stack.Screen
+            name={AllRoutes.SelectContac}
+            component={SelectContac}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </View>

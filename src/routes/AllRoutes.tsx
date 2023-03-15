@@ -25,4 +25,6 @@ export const AllRoutes = {
   PactActiveAll: 'PactActiveAll',
   EditPact: 'EditPact',
   ClosePact: 'ClosePact',
+  SelectContac: 'SelectContac',
+  EditTarget: 'EditTarget',
 };

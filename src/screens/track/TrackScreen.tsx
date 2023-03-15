@@ -14,6 +14,7 @@ import GoBacknavbar from '../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../constants/Colors';
 import NavigationService from '../../navigation/NavigationScren';
 import TrackElements from './components/TrackElements';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 
 const TrackScreen = () => {
   return (
@@ -28,17 +29,23 @@ const TrackScreen = () => {
         style={{flex: 1, position: 'relative'}}>
         <Imagebacground
           width={'100%'}
-          height={300}
+          height={220}
           imageUrl={require('../../assets/images/heroImages/home-hero-small.png')}
           title="Track Progress"
         />
         <View style={styles.data}>
           <TouchableOpacity>
-            <RightArrow fill={'#fff'} />
+            <IconEntypo
+              name="chevron-small-left"
+              style={{color: 'white', fontSize: 26}}
+            />
           </TouchableOpacity>
           <Text style={styles.dataTitle}>today</Text>
           <TouchableOpacity>
-            <RightArrow fill={'#fff'} />
+            <IconEntypo
+              name="chevron-small-right"
+              style={{color: 'white', fontSize: 26}}
+            />
           </TouchableOpacity>
         </View>
         <TrackElements />

@@ -4,7 +4,7 @@ import RadioGroup from '../../../../../../components/radioGroup/RadioGroup';
 import {COLORS} from '../../../../../../constants/Colors';
 import SwitchPro from './SwitchPro';
 import Target from './Target';
-import MesseageActive from './MesseageActive';
+import MesseageActive from '../../../../../../components/MesseageActive';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
 import {launchImageLibrary} from 'react-native-image-picker';
 
