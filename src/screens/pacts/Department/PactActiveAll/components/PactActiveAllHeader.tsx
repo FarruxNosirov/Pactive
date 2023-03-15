@@ -52,7 +52,7 @@ const PactActiveAllHeader = () => {
       <Imagebacground
         imageUrl={require('../../../../../assets/images/heroImages/walking-hero.jpg')}
         width={'100%'}
-        height={height / 2}
+        height={'100%'}
       />
       <View style={{position: 'absolute', width: '100%'}}>
         <View style={styles.title_box}>
@@ -224,6 +224,7 @@ const styles = StyleSheet.create({
     position: 'relative',
     width: '100%',
     alignItems: 'center',
+    height: height / 2,
   },
   title_box: {
     width: '100%',

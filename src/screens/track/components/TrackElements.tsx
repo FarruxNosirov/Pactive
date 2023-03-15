@@ -10,6 +10,7 @@ import {
 import {COLORS} from '../../../constants/Colors';
 
 import HexagonTrackPage from '../../../components/HexagonTrackPage';
+import Counter from '../../../components/Counter';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TrackElements = () => {
@@ -31,61 +32,12 @@ const TrackElements = () => {
               Tracked Automatically
             </Text>
           </View>
-          <View style={styles.trackRowWrap}>
-            <View style={styles.trackPageTrackValue}>
-              <TextInput
-                placeholder="250"
-                keyboardType="number-pad"
-                secureTextEntry={false}
-                maxLength={5}
-                allowFontScaling={false}
-                returnKeyType={'next'}
-                blurOnSubmit={true}
-                style={styles.trackInputFieldInput}
-              />
-              <View style={styles.metricValueLabelContainer}>
-                <Text style={styles.metricValueLabel}>Meters</Text>
-              </View>
-            </View>
-          </View>
-
-          <View style={styles.trackContainer}>
-            <View style={styles.trackButtonContainer}>
-              <TouchableOpacity
-                style={[styles.trackButton, styles.incrementButton]}>
-                <View>
-                  <Text
-                    style={[
-                      styles.trackButtonText,
-                      styles.incrementButtonText,
-                    ]}>
-                    - 250
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-
-            <View style={styles.trackButtonContainer}>
-              <TouchableOpacity
-                style={[styles.trackButton, styles.incrementButton]}>
-                <View>
-                  <Text
-                    style={[
-                      styles.trackButtonText,
-                      styles.incrementButtonText,
-                    ]}>
-                    + 250
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.trackButtonContainer}>
-              <TouchableOpacity
-                style={[styles.trackButton, styles.updateButton]}>
-                <Text style={styles.trackButtonText}>Update</Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+          <Counter
+            updateBtn={true}
+            btnValue={250}
+            valueName={'metres'}
+            btnTextStyle={{color: COLORS.pactiveGray}}
+          />
         </View>
         <View style={styles.percent}>
           <View style={styles.percent_content}>

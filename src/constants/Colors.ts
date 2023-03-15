@@ -23,4 +23,6 @@ export const COLORS = {
   newsLetter: '#007AFF',
   gray: 'gray',
   lightblue: 'lightblue',
+  backContainer: '#C8C8C8',
+  red: 'red',
 };

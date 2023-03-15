@@ -1,16 +1,15 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import DefaultInput from '../../../../../../components/defaultInput/DefaultInput';
-import {
-  ArrowBottomMarked,
-  BottomArrow,
-} from '../../../../../../assets/icons/iconst';
-import {COLORS} from '../../../../../../constants/Colors';
+import DefaultInput from './defaultInput/DefaultInput';
+import {ArrowBottomMarked, BottomArrow} from '../assets/icons/iconst';
+import {COLORS} from '../constants/Colors';
+import IconsDown from 'react-native-vector-icons/Entypo';
 type propsType = {
   title?: string;
   inputTitle?: string;
   value?: string;
   onChangeInput?: (val: string) => void;
+  minValue?: any;
 };
 const MesseageActive = (props: propsType) => {
   const [openModal, setOpenModal] = useState(false);
@@ -21,14 +20,26 @@ const MesseageActive = (props: propsType) => {
         onPress={() => setOpenModal(a => !a)}>
         <Text style={styles.title}>{props?.title}</Text>
         <View style={{position: 'absolute', right: 10}}>
-          <BottomArrow fill={'#000'} />
+          {openModal ? (
+            <IconsDown
+              name="chevron-thin-up"
+              size={24}
+              color={COLORS.activeTabTextColor}
+            />
+          ) : (
+            <IconsDown
+              name="chevron-thin-down"
+              size={24}
+              color={COLORS.activeTabTextColor}
+            />
+          )}
         </View>
       </TouchableOpacity>
       {openModal ? (
         <DefaultInput
           title={props?.inputTitle}
           multiline={true}
-          minHeight={80}
+          minHeight={props.minValue}
           value={props?.value}
           onChange={props.onChangeInput}
         />
@@ -60,6 +71,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.activeTabTextColor,
-    fontSize: 20,
+    fontSize: 16,
+    textTransform: 'uppercase',
   },
 });
