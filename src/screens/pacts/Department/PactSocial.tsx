@@ -11,7 +11,7 @@ const data = [
 const PactSocial = () => {
   return (
     <View
-      style={{backgroundColor: COLORS.white, height: '100%', marginTop: 20}}>
+      style={{backgroundColor: COLORS.white, height: '100%', paddingTop: 20}}>
       <FlatList
         data={data}
         renderItem={({item}) => {

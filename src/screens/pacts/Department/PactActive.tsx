@@ -29,27 +29,31 @@ const Data = [
 ];
 const PactActive = () => {
   return (
-    <FlatList
-      style={styles.containerFlatList}
-      data={Data}
-      renderItem={({item}) => {
-        return (
-          <ActiveCart
-            imageUrl={require('../../../assets/images/heroImages/walking-hero.jpg')}
-            name={item.name}
-          />
-        );
-      }}
-      numColumns={2}
-    />
+    <View
+      style={{backgroundColor: COLORS.white, height: '100%', paddingTop: 20}}>
+      <FlatList
+        data={Data}
+        showsVerticalScrollIndicator={false}
+        renderItem={({item}) => {
+          return (
+            <ActiveCart
+              imageUrl={require('../../../assets/images/heroImages/walking-hero.jpg')}
+              name={item.name}
+            />
+          );
+        }}
+        style={styles.container}
+        numColumns={2}
+      />
+    </View>
   );
 };
 
 export default PactActive;
 
 const styles = StyleSheet.create({
-  containerFlatList: {
+  container: {
     paddingHorizontal: 5,
-    marginTop: 20,
+    paddingBottom: 30,
   },
 });

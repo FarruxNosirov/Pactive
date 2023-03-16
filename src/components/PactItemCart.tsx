@@ -1,7 +1,6 @@
 import {
   Dimensions,
   Image,
-  ImageBackground,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -10,6 +9,7 @@ import {
 import React from 'react';
 import Imagebacground from './Imagebacground';
 import {COLORS} from '../constants/Colors';
+import NavigationService from '../navigation/NavigationScren';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TILE_WIDTH = Math.floor(SCREEN_WIDTH / 2) - 15;
 const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);
@@ -17,10 +17,11 @@ const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);
 type propsType = {
   name?: string;
 };
-
 const PactItemCart = (props: propsType) => {
   return (
-    <TouchableOpacity style={styles.tile}>
+    <TouchableOpacity
+      style={styles.tile}
+      onPress={() => NavigationService.navigate('PactSocialAll')}>
       <View style={styles.iconstContent}>
         <View style={styles.iconst}>
           <Image

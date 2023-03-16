@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import Text from '../../../constants/Text';
-
+import Icon from 'react-native-vector-icons/Feather';
+import {COLORS} from '../../../constants/Colors';
 const styles = StyleSheet.create({
   container: {
     width: '100%',
@@ -13,6 +14,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#B6B6B6',
+    marginBottom: 10,
   },
   icon: {
     color: '#B6B6B6',
@@ -34,6 +36,7 @@ export default function NoPactsView(props: {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>No {props.title}, pull to refresh</Text>
+      <Icon name="arrow-down" size={24} color={COLORS.textColor} />
     </View>
   );
 }

@@ -10,7 +10,7 @@ import React, {useState} from 'react';
 import {COLORS} from '../constants/Colors';
 
 type propsType = {
-  btnValue?: string | number;
+  btnValue?: any;
   valueName?: string | number;
   updateBtn?: any;
   inputStyle?: any;
@@ -27,9 +27,24 @@ type propsType = {
   };
   placeholder?: string;
   defaultValue?: string;
+  setAdValue?: any;
+  addValue?: any;
 };
 const Counter = (props: propsType) => {
-  const [inputValue, setInputValue] = useState('');
+  const {setAdValue, addValue} = props;
+
+  const adHandler = (a: string) => {
+    if (a === 'add') {
+      setAdValue((c: number) => c + props.btnValue);
+    } else {
+      if (addValue > 0) {
+        setAdValue((c: number) => c - props.btnValue);
+      } else {
+        setAdValue(0);
+      }
+    }
+  };
+
   return (
     <View style={styles.trackComponentContentsContainer}>
       <View style={styles.trackRowWrap}>
@@ -38,25 +53,20 @@ const Counter = (props: propsType) => {
             styles.trackPageTrackValue,
             {flexDirection: props.inputStyle && 'row'},
           ]}>
-          <TextInput
-            placeholder={props.placeholder}
-            keyboardType="number-pad"
-            secureTextEntry={false}
-            maxLength={5}
-            allowFontScaling={false}
-            returnKeyType={'next'}
-            blurOnSubmit={true}
-            style={styles.trackInputFieldInput}
-            onChangeText={e => setInputValue(e)}
-            value={inputValue}
-          />
+          <View
+            style={{
+              borderBottomWidth: 1,
+              borderBottomColor: COLORS.newsLetter,
+            }}>
+            <Text style={styles.trackInputFieldInput}>{addValue}</Text>
+          </View>
           <View style={styles.metricValueLabelContainer}>
             <Text style={styles.metricValueLabel}>{props.valueName}</Text>
           </View>
         </View>
         {props?.defaultValue && (
           <View>
-            {inputValue.length <= 0 ? (
+            {addValue <= 0 ? (
               <Text style={styles.textError}>Taraet connot be ematu</Text>
             ) : null}
           </View>
@@ -66,6 +76,7 @@ const Counter = (props: propsType) => {
       <View style={styles.trackContainer}>
         <View style={[styles.trackButtonContainer]}>
           <TouchableOpacity
+            onPress={() => adHandler('remov')}
             style={[
               styles.trackButton,
               styles.incrementButton,
@@ -81,6 +92,7 @@ const Counter = (props: propsType) => {
 
         <View style={[styles.trackButtonContainer]}>
           <TouchableOpacity
+            onPress={() => adHandler('add')}
             style={[
               styles.trackButton,
               styles.incrementButton,

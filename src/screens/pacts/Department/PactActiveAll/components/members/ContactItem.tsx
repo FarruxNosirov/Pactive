@@ -1,27 +1,57 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../../../../constants/Colors';
+import Text from '../../../../../../constants/Text';
+import Chackbox from '../../../../../../components/Chackbox';
 
 const ContactItem = () => {
-  return <View style={{borderWidth: 1}}></View>;
+  return (
+    <View style={styles.container}>
+      <View style={styles.name_phone}>
+        <Text style={styles.name}>Diyor</Text>
+        <View style={styles.phone_box}>
+          <Text style={styles.phoneDes}>mobile</Text>
+          <Text style={styles.phone}>+998994454235</Text>
+        </View>
+      </View>
+      <View style={styles.chackbox}>
+        <Chackbox />
+      </View>
+    </View>
+  );
 };
 
 export default ContactItem;
 
 const styles = StyleSheet.create({
-  item: {
-    padding: 12,
+  container: {
     flexDirection: 'row',
     alignItems: 'center',
     width: '100%',
-    flex: 1,
-    backgroundColor: COLORS.itemContainerColor,
-    borderRadius: 6,
+    justifyContent: 'space-between',
+    backgroundColor: COLORS.pactiveLightGray,
+    marginVertical: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+  },
+  name_phone: {},
+  phone_box: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  name: {
+    color: COLORS.black,
+    fontSize: 16,
     marginBottom: 5,
   },
-  about: {
+  phoneDes: {
     color: COLORS.textColor,
-    fontSize: 10,
-    opacity: 0.5,
+    fontSize: 12,
   },
+  phone: {
+    color: COLORS.textColor,
+    fontSize: 12,
+    marginLeft: 5,
+  },
+  chackbox: {},
 });

@@ -1,12 +1,23 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 import Imagebacground from '../../../components/Imagebacground';
 import Hexagon from '../../../components/Hexagon';
 import NavigationService from '../../../navigation/NavigationScren';
-
+const height = Dimensions.get('window').height;
 const PactsHeader = () => {
   return (
-    <>
+    <View
+      style={{
+        height: height / 1.75,
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
       <Imagebacground
         imageUrl={require('../../../assets/images/heroImages/pacts-hero.png')}
         width={'100%'}
@@ -21,7 +32,8 @@ const PactsHeader = () => {
               gradient={false}
               marginHorizontal={0}
             />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => NavigationService.navigate('HistoryPact')}>
               <Hexagon
                 size="90"
                 fill="#16E9A3"
@@ -77,7 +89,7 @@ const PactsHeader = () => {
           </View>
         </View>
       </View>
-    </>
+    </View>
   );
 };
 

@@ -10,19 +10,20 @@ import {
 import {COLORS} from '../../../constants/Colors';
 
 type SettingsItemProps = {
-  icon?: any;
-  icon2?: any;
+  iconName: string;
+  rightIcon?: string;
   text?: string;
   onPress?: (event: GestureResponderEvent) => void;
   rightText?: string;
   iconBackgroundColor?: string;
 };
-
+import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconEntypo from 'react-native-vector-icons/Entypo';
 const ProfileCart = ({
-  icon,
+  iconName,
   text,
   onPress,
-  icon2,
+  rightIcon,
   rightText,
   iconBackgroundColor,
 }: SettingsItemProps) => {
@@ -30,11 +31,21 @@ const ProfileCart = ({
     <TouchableOpacity style={styles.settingsButton} onPress={onPress}>
       <View style={styles.container}>
         <View style={[styles.icon_box, {backgroundColor: iconBackgroundColor}]}>
-          <View style={styles.icon}>{icon ? icon : null}</View>
+          <View style={styles.icon}>
+            <IconMaterial
+              name={iconName}
+              style={{
+                color: 'white',
+                fontSize: 22,
+                marginTop: 2,
+                marginLeft: 1,
+              }}
+            />
+          </View>
         </View>
         <View style={styles.rightBox}>
           <Text style={styles.text}>{text}</Text>
-          {icon2 ? icon2 : null}
+          {rightIcon ? <IconEntypo name={rightIcon} /> : null}
           {rightText ? <Text style={styles.rightText}>{rightText}</Text> : null}
         </View>
       </View>
