@@ -1,42 +1,39 @@
-import React, {useState} from 'react';
 import {
-  FlatList,
+  Dimensions,
   ScrollView,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
+import React, {useState} from 'react';
+import Imagebacground from '../../../../components/Imagebacground';
 import BackEditHeader from '../../../../components/BackEditHeader';
 import {COLORS} from '../../../../constants/Colors';
-import PactActiveAllHeader from './components/PactActiveAllHeader';
 import NavigationService from '../../../../navigation/NavigationScren';
-import Text from '../../../../constants/Text';
-import InfoPact from './components/infoPact/InfoPact';
+import PactSocialAllHeader from './components/PactSocialAllHeader';
 import BottomHeight from '../../../../components/BottomHeight';
-import Messages from './components/messages/Messages';
-import Members from './components/members/Members';
+import InfoSocial from './components/InfoSocial';
+import AboutUsSocial from './components/AboutUsSocial';
+import InfoPact from '../PactActiveAll/components/infoPact/InfoPact';
 
-const PactActiveAll = () => {
+const height = Dimensions.get('window').height;
+const PactSocialAll = () => {
   const [active, setActive] = useState({
     info: true,
-    messages: false,
-    members: false,
+    about: false,
   });
-
   return (
     <View style={{flex: 1, backgroundColor: COLORS.white}}>
       <BackEditHeader
         backgroundColor={COLORS.fixedHeaderBg}
+        social={true}
         name="Back"
         onBackPress={() => NavigationService.goBack()}
-        active={true}
       />
 
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        scrollEnabled={active.messages ? false : true}>
-        {!active.messages ? <PactActiveAllHeader /> : null}
-
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <PactSocialAllHeader about={active.about} info={active.info} />
         <View style={styles.topBar}>
           <TouchableOpacity
             style={[active.info ? styles.btnActive : styles.btn]}
@@ -44,8 +41,7 @@ const PactActiveAll = () => {
               setActive({
                 ...active,
                 info: true,
-                messages: false,
-                members: false,
+                about: false,
               })
             }>
             <Text style={[active.info ? styles.textActive : styles.text]}>
@@ -53,46 +49,30 @@ const PactActiveAll = () => {
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.btn}
+            style={[active.about ? styles.btnActive : styles.btn]}
             onPress={() =>
               setActive({
                 ...active,
-                messages: true,
                 info: false,
-                members: false,
+                about: true,
               })
             }>
-            <Text style={[active.messages ? styles.textActive : styles.text]}>
-              Messages
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.btn}
-            onPress={() =>
-              setActive({
-                ...active,
-                members: true,
-                info: false,
-                messages: false,
-              })
-            }>
-            <Text style={[active.members ? styles.textActive : styles.text]}>
-              Members
+            <Text style={[active.about ? styles.textActive : styles.text]}>
+              About Us
             </Text>
           </TouchableOpacity>
         </View>
         <View style={styles.body}>
           {active.info && <InfoPact />}
-          {active.messages && <Messages />}
-          {active.members && <Members />}
+          {active.about && <AboutUsSocial />}
         </View>
-        <BottomHeight height={40} />
+        <BottomHeight height={50} />
       </ScrollView>
     </View>
   );
 };
 
-export default PactActiveAll;
+export default PactSocialAll;
 
 const styles = StyleSheet.create({
   topBar: {
@@ -104,13 +84,13 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.pactiveHeaderColor,
   },
   btn: {
-    width: '33%',
+    width: '50%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
   btnActive: {
-    width: '33%',
+    width: '50%',
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',

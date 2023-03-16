@@ -11,6 +11,7 @@ import {
 import React from 'react';
 import {COLORS} from '../../../../constants/Colors';
 import PactItemCart from '../../../../components/PactItemCart';
+import NavigationService from '../../../../navigation/NavigationScren';
 const data = [
   {id: 0, name: 'salom salom salom salom '},
   {id: 1, name: 'salom salom salom salom '},
@@ -26,7 +27,8 @@ const SocialPacts = () => {
       ListHeaderComponent={
         <View style={styles.headerContainer}>
           <Text style={styles.header}>Social Pacts</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => NavigationService.navigate('PactsStacks')}>
             <Text style={styles.link}>View All</Text>
           </TouchableOpacity>
         </View>

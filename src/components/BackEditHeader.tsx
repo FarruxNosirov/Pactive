@@ -6,26 +6,30 @@ import IconDesign from 'react-native-vector-icons/AntDesign';
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import Text from '../constants/Text';
 import NavigationService from '../navigation/NavigationScren';
-import {useNavigation} from '@react-navigation/native';
-import {AllRoutes} from '../routes/AllRoutes';
 
 type propsType = {
   onBackPress?: () => void | undefined;
   name?: string;
   backgroundColor?: string;
   position?: string;
+  active?: boolean;
+  social?: boolean;
+  modalOf?: boolean;
 };
 
 const BackEditHeader = (props: propsType) => {
-  const navigation = useNavigation();
   const [modalVisible, setModalVisible] = useState(false);
+
   const EditHandler = () => {
-    // NavigationService.navigate('EditPact');
-    navigation.navigate(AllRoutes.EditPact as never);
+    NavigationService.navigate('EditPact');
     setModalVisible(false);
   };
   const CloseHandler = () => {
     NavigationService.navigate('ClosePact');
+    setModalVisible(false);
+  };
+  const SocialHandler = () => {
+    NavigationService.navigate('ReportPact');
     setModalVisible(false);
   };
   return (
@@ -46,9 +50,14 @@ const BackEditHeader = (props: propsType) => {
           />
           <Text style={styles.header_title}>{props.name}</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => setModalVisible(true)}>
-          <IconDesign name="ellipsis1" style={{color: '#fff', fontSize: 30}} />
-        </TouchableOpacity>
+        {props.modalOf ? null : (
+          <TouchableOpacity onPress={() => setModalVisible(true)}>
+            <IconDesign
+              name="ellipsis1"
+              style={{color: '#fff', fontSize: 30}}
+            />
+          </TouchableOpacity>
+        )}
       </View>
 
       <Modal
@@ -58,25 +67,38 @@ const BackEditHeader = (props: propsType) => {
         onRequestClose={() => {
           setModalVisible(!modalVisible);
         }}>
-        <View
-          style={{
-            backgroundColor: COLORS.white,
-            width: 130,
-            height: 80,
-            position: 'absolute',
-            right: 20,
-            top: 60,
-            borderRadius: 5,
-            justifyContent: 'space-around',
-            paddingLeft: 20,
-          }}>
-          <TouchableOpacity onPress={EditHandler}>
-            <Text>Edit Pact</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={CloseHandler}>
-            <Text>Close Pact</Text>
-          </TouchableOpacity>
-        </View>
+        <TouchableOpacity
+          style={{width: '100%', height: '100%'}}
+          onPress={() => setModalVisible(false)}>
+          <View
+            style={{
+              backgroundColor: COLORS.white,
+              position: 'absolute',
+              right: 20,
+              top: 60,
+              borderRadius: 5,
+              justifyContent: 'space-around',
+              paddingLeft: 20,
+              paddingRight: 25,
+              paddingVertical: 10,
+            }}>
+            {props.active && (
+              <TouchableOpacity onPress={EditHandler} style={styles.btn}>
+                <Text>Edit Pact</Text>
+              </TouchableOpacity>
+            )}
+            {props.active && (
+              <TouchableOpacity onPress={CloseHandler} style={styles.btn}>
+                <Text>Close Pact</Text>
+              </TouchableOpacity>
+            )}
+            {props.social && (
+              <TouchableOpacity onPress={SocialHandler} style={styles.btn}>
+                <Text>Report Pact</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        </TouchableOpacity>
       </Modal>
     </>
   );
@@ -108,5 +130,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     zIndex: 1,
+  },
+  btn: {
+    marginVertical: 5,
   },
 });

@@ -1,12 +1,21 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import Imagebacground from '../../../../../../components/Imagebacground';
 import Counter from '../../../../../../components/Counter';
 import {COLORS} from '../../../../../../constants/Colors';
+import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
+import NavigationService from '../../../../../../navigation/NavigationScren';
+import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
 
 const EditTarget = () => {
+  const [addValue, setAdValue] = useState(0);
   return (
     <View style={styles.container}>
+      <GoBacknavbar
+        backgroundColor={COLORS.fixedHeaderBg}
+        name="Cancel"
+        onPress={() => NavigationService.goBack()}
+      />
       <Imagebacground
         imageUrl={require('../../../../../../assets/images/heroImages/home-hero-small.png')}
         width={'100%'}
@@ -38,7 +47,12 @@ const EditTarget = () => {
           inputStyle={true}
           ButtonStyle={{backgroundColor: COLORS.pactiveGreen}}
           defaultValue="0"
+          setAdValue={setAdValue}
+          addValue={addValue}
         />
+      </View>
+      <View style={{paddingHorizontal: 20, marginTop: 40}}>
+        {addValue > 0 ? <DefaultButton title="Update targats" /> : null}
       </View>
     </View>
   );

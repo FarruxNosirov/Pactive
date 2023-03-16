@@ -357,7 +357,7 @@ const Register = (props: any) => {
         <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
           <DefaultButton
             title="Save Profile"
-            onPress={() => navigation.navigate(AllRoutes.TabStacks as never)}
+            onPress={() => navigation.navigate(AllRoutes.BottomStacks as never)}
           />
         </View>
         <ButtomHeght height={30} />

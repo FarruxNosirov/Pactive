@@ -36,6 +36,10 @@ const Members = () => {
           title="edit targets"
           onPress={() => NavigationService.navigate('EditTarget')}
         />
+        <DefaultButton
+          title="remove members"
+          onPress={() => NavigationService.navigate('RemoveMembers')}
+        />
       </View>
     </View>
   );

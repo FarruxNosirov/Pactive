@@ -12,6 +12,7 @@ import BottomHeight from '../../components/BottomHeight';
 import ProfileCart from './components/ProfileCart';
 import {ProfileIconActive, RightArrow} from '../../assets/icons/iconst';
 import NavigationService from '../../navigation/NavigationScren';
+import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const ProfileScreen = () => {
   return (
@@ -24,54 +25,53 @@ const ProfileScreen = () => {
           imageUrl={require('../../assets/images/heroImages/account-hero.png')}
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="account"
           iconBackgroundColor={COLORS.accountIconColor}
           text="Account"
           onPress={() => NavigationService.navigate('Account')}
           rightText="Saa"
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="heart"
           iconBackgroundColor={COLORS.healthIconColor}
           text="Health App"
-          icon2={<RightArrow fill={COLORS.black} />}
+          rightIcon="chevron-thin-right"
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="star"
           iconBackgroundColor={COLORS.gold}
           text="Feedback"
           onPress={() => NavigationService.navigate('Feedback')}
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="newspaper"
           iconBackgroundColor={COLORS.newsLetter}
           text="Newsletter"
-          icon2={<RightArrow fill={COLORS.black} />}
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="hand-left"
           iconBackgroundColor={COLORS.gray}
           text="Privacy Policy"
-          icon2={<RightArrow fill={COLORS.black} />}
+          rightIcon="chevron-thin-right"
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="file-document"
           iconBackgroundColor={COLORS.lightblue}
           text="Terms & Conditions"
-          icon2={<RightArrow fill={COLORS.black} />}
+          rightIcon="chevron-thin-right"
         />
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="file-document"
           iconBackgroundColor={COLORS.lightblue}
           text="Advert Preferences"
-          icon2={<RightArrow fill={COLORS.black} />}
+          rightIcon="chevron-thin-right"
         />
 
         <TouchableOpacity style={styles.siginOut}>
           <Text style={styles.siginOutTitle}>Sigin Out</Text>
         </TouchableOpacity>
         <ProfileCart
-          icon={<ProfileIconActive fill={COLORS.white} />}
+          iconName="trash-can-outline"
           iconBackgroundColor={COLORS.black}
           text="Delete account"
           onPress={() => NavigationService.navigate('DeleteAccount')}

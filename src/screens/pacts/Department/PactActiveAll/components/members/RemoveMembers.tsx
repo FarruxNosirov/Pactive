@@ -1,7 +1,6 @@
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Imagebacground from '../../../../../../components/Imagebacground';
-import SearchContact from '../../../../../../components/SearchContact';
 import {COLORS} from '../../../../../../constants/Colors';
 import ContactItem from './ContactItem';
 import {HelpData} from '../../../../../help/components/DataHelp';
@@ -10,7 +9,7 @@ import NavigationService from '../../../../../../navigation/NavigationScren';
 import BottomHeight from '../../../../../../components/BottomHeight';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
 
-const SelectContac = () => {
+const RemoveMembers = () => {
   return (
     <View style={styles.container}>
       <GoBacknavbar
@@ -26,11 +25,11 @@ const SelectContac = () => {
               width={'100%'}
               height={220}
               boxShadow={false}
-              title="Select Contacts"
+              title="Remove Members"
             />
-            <SearchContact placeholder="Search contacts" btnName="Cancel" />
           </>
         }
+        ListHeaderComponentStyle={{marginBottom: 40}}
         showsVerticalScrollIndicator={false}
         data={HelpData}
         renderItem={() => (
@@ -40,10 +39,7 @@ const SelectContac = () => {
         )}
         ListFooterComponent={
           <>
-            <DefaultButton
-              title="Next"
-              onPress={() => NavigationService.navigate('SetTarget')}
-            />
+            <DefaultButton title="Remove" />
             <BottomHeight height={50} />
           </>
         }
@@ -53,7 +49,7 @@ const SelectContac = () => {
   );
 };
 
-export default SelectContac;
+export default RemoveMembers;
 
 const styles = StyleSheet.create({
   container: {
