@@ -27,8 +27,8 @@ type propsType = {
   };
   placeholder?: string;
   defaultValue?: string;
-  setAdValue?: any;
-  addValue?: any;
+  setAdValue: any;
+  addValue: any;
 };
 const Counter = (props: propsType) => {
   const {setAdValue, addValue} = props;

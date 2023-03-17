@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  KeyboardAvoidingView,
   Platform,
   ScrollView,
   StyleSheet,
@@ -97,236 +98,242 @@ const Account = (props: any) => {
         name="Cancel"
         backgroundColor={COLORS.fixedHeaderBg}
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.heroHeaderWrapper]}>
-          <Imagebacground
-            width={'100%'}
-            height={220}
-            imageUrl={require('../../../../assets/images/heroImages/home-hero-small.png')}
-            title="Account"
-            boxShadow={true}
-          />
-          <ImageEdit changePhoto={changePhoto} state={url} />
-        </View>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'position' : 'height'}
+        keyboardVerticalOffset={80}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={[styles.heroHeaderWrapper]}>
+            <Imagebacground
+              width={'100%'}
+              height={220}
+              imageUrl={require('../../../../assets/images/heroImages/home-hero-small.png')}
+              title="Account"
+              boxShadow={true}
+            />
+            <ImageEdit changePhoto={changePhoto} state={url} />
+          </View>
 
-        <View
-          style={{
-            marginLeft: 20,
-            marginRight: 20,
-            paddingBottom: 30,
-            flex: 1,
-            marginTop: 50,
-          }}>
-          <DefaultInput
-            title="First Name"
-            error="You must enter a name"
-            value={state.firstname}
-            onChange={e => onStateChange(e, 'firstname')}
-          />
+          <View
+            style={{
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 30,
+              flex: 1,
+              marginTop: 50,
+            }}>
+            <DefaultInput
+              title="First Name"
+              error="You must enter a name"
+              value={state.firstname}
+              onChange={e => onStateChange(e, 'firstname')}
+            />
 
-          <DefaultInput
-            title="SURNAME"
-            error="You must enter a family name"
-            value={state.surname}
-            onChange={e => onStateChange(e, 'surname')}
-          />
+            <DefaultInput
+              title="SURNAME"
+              error="You must enter a family name"
+              value={state.surname}
+              onChange={e => onStateChange(e, 'surname')}
+            />
 
-          <DefaultInput
-            title="DISPLAY NAME"
-            error=" Display Name is required for social message feeds"
-            value={state.displayname}
-            onChange={e => onStateChange(e, 'displayname')}
-          />
+            <DefaultInput
+              title="DISPLAY NAME"
+              error=" Display Name is required for social message feeds"
+              value={state.displayname}
+              onChange={e => onStateChange(e, 'displayname')}
+            />
 
-          <DefaultInput
-            title="EMAIL"
-            error="You must enter a valid email addresss"
-            value={state.email}
-            onChange={e => onStateChange(e, 'email')}
-          />
-          {/* DATE OF BIRTH */}
+            <DefaultInput
+              title="EMAIL"
+              error="You must enter a valid email addresss"
+              value={state.email}
+              onChange={e => onStateChange(e, 'email')}
+            />
+            {/* DATE OF BIRTH */}
 
-          <BirthDay
-            date={date}
-            setOpenDate={setOpenDate}
-            openDate={openDate}
-            setDate={setDate}
-          />
+            <BirthDay
+              date={date}
+              setOpenDate={setOpenDate}
+              openDate={openDate}
+              setDate={setDate}
+            />
 
-          {/* GENDER */}
-          <View style={{marginBottom: 30, marginTop: 30}}>
-            <Text style={styles.inputLabel}>GENDER</Text>
-            <View style={styles.radioBtn}>
-              {DATA.map((item, index) => {
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.radioRadioGroupItem}
-                    onPress={() => {
-                      setGender(item.name);
-                      setState({...state, gender: item.name});
-                    }}>
-                    <View style={styles.radioRadioGroupItemIndicator}>
-                      {gender === item.name ? (
-                        <View style={styles.radioRadioGroupItemIndicatorDot} />
-                      ) : null}
-                    </View>
-                    <Text
-                      style={{
-                        fontSize: 16,
-                        color: COLORS.textColor,
+            {/* GENDER */}
+            <View style={{marginBottom: 30, marginTop: 30}}>
+              <Text style={styles.inputLabel}>GENDER</Text>
+              <View style={styles.radioBtn}>
+                {DATA.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.radioRadioGroupItem}
+                      onPress={() => {
+                        setGender(item.name);
+                        setState({...state, gender: item.name});
                       }}>
-                      {item.name}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
+                      <View style={styles.radioRadioGroupItemIndicator}>
+                        {gender === item.name ? (
+                          <View
+                            style={styles.radioRadioGroupItemIndicatorDot}
+                          />
+                        ) : null}
+                      </View>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: COLORS.textColor,
+                        }}>
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
             </View>
-          </View>
-          {/* YOUR HEIGHT */}
-          <View>
+            {/* YOUR HEIGHT */}
             <View>
-              <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
-              <View style={styles.switchWrapper}>
-                <Text style={styles.switchLabelLeft}>ft'in</Text>
-                <Switch
-                  value={checkBox.active1}
-                  onValueChange={() =>
-                    setCheckBox({...checkBox, active1: !checkBox.active1})
-                  }
-                  activeText={''}
-                  inActiveText={''}
-                  circleSize={30}
-                  barHeight={20}
-                  circleBorderWidth={0}
-                  backgroundActive={'#CDCDCD'}
-                  backgroundInactive={'#CDCDCD'}
-                  circleActiveColor={'#16E9A3'}
-                  circleInActiveColor={'#16E9A3'}
-                  containerStyle={{
-                    overflow: 'visible',
-                    borderWidth: 0,
-                    marginTop: 20,
-                    marginBottom: 20,
-                  }}
-                  disabled={false}
-                />
-                <Text style={styles.switchLabelRight}>cm</Text>
-              </View>
-            </View>
-            {checkBox.active1 ? (
               <View>
-                <Text style={styles.inputLabel}>CM</Text>
-                <TextInput
-                  style={styles.inputField}
-                  onChangeText={e => onStateChange(e, 'cmvalyu')}
-                  value={state.cmvalyu}
-                />
-              </View>
-            ) : (
-              <View
-                style={{
-                  width: '100%',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>FT</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'ftvalyu')}
-                    value={state.ftvalyu}
+                <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
+                <View style={styles.switchWrapper}>
+                  <Text style={styles.switchLabelLeft}>ft'in</Text>
+                  <Switch
+                    value={checkBox.active1}
+                    onValueChange={() =>
+                      setCheckBox({...checkBox, active1: !checkBox.active1})
+                    }
+                    activeText={''}
+                    inActiveText={''}
+                    circleSize={30}
+                    barHeight={20}
+                    circleBorderWidth={0}
+                    backgroundActive={'#CDCDCD'}
+                    backgroundInactive={'#CDCDCD'}
+                    circleActiveColor={'#16E9A3'}
+                    circleInActiveColor={'#16E9A3'}
+                    containerStyle={{
+                      overflow: 'visible',
+                      borderWidth: 0,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}
+                    disabled={false}
                   />
-                </View>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>IN</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'invalyu')}
-                    value={state.invalyu}
-                  />
+                  <Text style={styles.switchLabelRight}>cm</Text>
                 </View>
               </View>
-            )}
-          </View>
-          {/* <HeightWeight
+              {checkBox.active1 ? (
+                <View>
+                  <Text style={styles.inputLabel}>CM</Text>
+                  <TextInput
+                    style={styles.inputField}
+                    onChangeText={e => onStateChange(e, 'cmvalyu')}
+                    value={state.cmvalyu}
+                  />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>FT</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'ftvalyu')}
+                      value={state.ftvalyu}
+                    />
+                  </View>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>IN</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'invalyu')}
+                      value={state.invalyu}
+                    />
+                  </View>
+                </View>
+              )}
+            </View>
+            {/* <HeightWeight
             checkBox={undefined}
             state={undefined}
             onStateChange={()=>onStateChange('')}
           /> */}
-          {/* YOUR WEIGHT */}
-          <View>
-            <View style={{marginTop: 20}}>
-              <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
-              <View style={styles.switchWrapper}>
-                <Text style={styles.switchLabelLeft}>st'lb</Text>
-                <Switch
-                  value={checkBox.active2}
-                  onValueChange={() =>
-                    setCheckBox({...checkBox, active2: !checkBox.active2})
-                  }
-                  activeText={''}
-                  inActiveText={''}
-                  circleSize={30}
-                  barHeight={20}
-                  circleBorderWidth={0}
-                  backgroundActive={'#CDCDCD'}
-                  backgroundInactive={'#CDCDCD'}
-                  circleActiveColor={'#16E9A3'}
-                  circleInActiveColor={'#16E9A3'}
-                  containerStyle={{
-                    overflow: 'visible',
-                    borderWidth: 0,
-                    marginTop: 20,
-                    marginBottom: 20,
-                  }}
-                  disabled={false}
-                />
-                <Text style={styles.switchLabelRight}>kg</Text>
+            {/* YOUR WEIGHT */}
+            <View>
+              <View style={{marginTop: 20}}>
+                <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
+                <View style={styles.switchWrapper}>
+                  <Text style={styles.switchLabelLeft}>st'lb</Text>
+                  <Switch
+                    value={checkBox.active2}
+                    onValueChange={() =>
+                      setCheckBox({...checkBox, active2: !checkBox.active2})
+                    }
+                    activeText={''}
+                    inActiveText={''}
+                    circleSize={30}
+                    barHeight={20}
+                    circleBorderWidth={0}
+                    backgroundActive={'#CDCDCD'}
+                    backgroundInactive={'#CDCDCD'}
+                    circleActiveColor={'#16E9A3'}
+                    circleInActiveColor={'#16E9A3'}
+                    containerStyle={{
+                      overflow: 'visible',
+                      borderWidth: 0,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}
+                    disabled={false}
+                  />
+                  <Text style={styles.switchLabelRight}>kg</Text>
+                </View>
               </View>
+              {checkBox.active2 ? (
+                <View>
+                  <Text style={styles.inputLabel}>KG</Text>
+                  <TextInput
+                    style={styles.inputField}
+                    onChangeText={e => onStateChange(e, 'kgvalyu')}
+                    value={state.kgvalyu}
+                  />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>ST</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'stvalyu')}
+                      value={state.stvalyu}
+                    />
+                  </View>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>LB</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'lbvalyu')}
+                      value={state.lbvalyu}
+                    />
+                  </View>
+                </View>
+              )}
             </View>
-            {checkBox.active2 ? (
-              <View>
-                <Text style={styles.inputLabel}>KG</Text>
-                <TextInput
-                  style={styles.inputField}
-                  onChangeText={e => onStateChange(e, 'kgvalyu')}
-                  value={state.kgvalyu}
-                />
-              </View>
-            ) : (
-              <View
-                style={{
-                  width: '100%',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>ST</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'stvalyu')}
-                    value={state.stvalyu}
-                  />
-                </View>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>LB</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'lbvalyu')}
-                    value={state.lbvalyu}
-                  />
-                </View>
-              </View>
-            )}
           </View>
-        </View>
 
-        <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
-          <DefaultButton title="Save Profile" />
-        </View>
-        <BottomHeight height={30} />
-      </ScrollView>
+          <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
+            <DefaultButton title="Save Profile" />
+          </View>
+          <BottomHeight height={30} />
+        </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 };
