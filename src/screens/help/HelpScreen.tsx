@@ -1,5 +1,12 @@
 import React from 'react';
-import {FlatList, StyleSheet, TextInput, View} from 'react-native';
+import {
+  FlatList,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  TextInput,
+  View,
+} from 'react-native';
 import BottomHeight from '../../components/BottomHeight';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 import Imagebacground from '../../components/Imagebacground';
@@ -18,44 +25,48 @@ const Data = [
 const HelpScreen = () => {
   return (
     <View style={styles.container}>
-      <FlatList
-        ListHeaderComponent={
-          <Imagebacground
-            title="Help"
-            imageUrl={require('../../assets/images/heroImages/help-hero.png')}
-            width={'100%'}
-            height={200}
-          />
-        }
-        showsVerticalScrollIndicator={false}
-        data={HelpData}
-        renderItem={({item}) => (
-          <HelpCart title={item?.title} content={item.content} />
-        )}
-        ListFooterComponent={
-          <>
-            <View style={{paddingTop: 20, marginHorizontal: 20}}>
-              <View style={styles.helpTextWrapper}>
-                <Text style={styles.helpText}>
-                  Still can't find what you're looking for?
-                </Text>
-                <Text style={styles.helpText}>
-                  Send us a message with your query.
-                </Text>
-              </View>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={80}>
+        <FlatList
+          ListHeaderComponent={
+            <Imagebacground
+              title="Help"
+              imageUrl={require('../../assets/images/heroImages/help-hero.png')}
+              width={'100%'}
+              height={200}
+            />
+          }
+          showsVerticalScrollIndicator={false}
+          data={HelpData}
+          renderItem={({item}) => (
+            <HelpCart title={item?.title} content={item.content} />
+          )}
+          ListFooterComponent={
+            <>
+              <View style={{paddingTop: 20, marginHorizontal: 20}}>
+                <View style={styles.helpTextWrapper}>
+                  <Text style={styles.helpText}>
+                    Still can't find what you're looking for?
+                  </Text>
+                  <Text style={styles.helpText}>
+                    Send us a message with your query.
+                  </Text>
+                </View>
 
-              <TextInput multiline={true} style={styles.textArea} />
-              <View style={{marginTop: 20, paddingHorizontal: 80}}>
-                <DefaultButton title="send" />
+                <TextInput multiline={true} style={styles.textArea} />
+                <View style={{marginTop: 20, paddingHorizontal: 80}}>
+                  <DefaultButton title="send" />
+                </View>
               </View>
-            </View>
-            <View style={{paddingTop: 20}}>
-              <Text style={styles.appVersion}>App version: - build</Text>
-            </View>
-            <BottomHeight height={50} />
-          </>
-        }
-      />
+              <View style={{paddingTop: 20}}>
+                <Text style={styles.appVersion}>App version: - build</Text>
+              </View>
+              <BottomHeight height={50} />
+            </>
+          }
+        />
+      </KeyboardAvoidingView>
     </View>
   );
 };

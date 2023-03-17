@@ -125,7 +125,7 @@ const CreatePactScreen = () => {
   return (
     <View style={{flex: 1, backgroundColor: COLORS.white}}>
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        behavior={Platform.OS === 'ios' ? 'position' : 'height'}
         keyboardVerticalOffset={60}>
         <GoBacknavbar
           name="Cancel"

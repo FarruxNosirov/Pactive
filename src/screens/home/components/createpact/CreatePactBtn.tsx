@@ -9,6 +9,7 @@ import React from 'react';
 import {COLORS} from '../../../../constants/Colors';
 import {PlusIcon} from '../../../../assets/icons/iconst';
 import NavigationService from '../../../../navigation/NavigationScren';
+import IconAntDesign from 'react-native-vector-icons/AntDesign';
 
 const CreatePactBtn = () => {
   return (
@@ -43,7 +44,7 @@ const CreatePactBtn = () => {
             paddingVertical: 8,
             paddingLeft: 5,
           }}>
-          <PlusIcon fill={COLORS.white} />
+          <IconAntDesign name="plus" size={22} color={COLORS.white} />
           <Text style={styles.text}>Create Pact</Text>
         </View>
       </TouchableOpacity>

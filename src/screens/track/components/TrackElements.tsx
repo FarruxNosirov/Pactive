@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Dimensions,
   StyleSheet,
@@ -14,6 +14,7 @@ import Counter from '../../../components/Counter';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TrackElements = () => {
+  const [addValue, setAdValue] = useState(0);
   return (
     <View style={styles.trackComponentOuterContainer}>
       <View style={styles.trackComponentHeading}>
@@ -37,6 +38,8 @@ const TrackElements = () => {
             btnValue={250}
             valueName={'metres'}
             btnTextStyle={{color: COLORS.pactiveGray}}
+            setAdValue={setAdValue}
+            addValue={addValue}
           />
         </View>
         <View style={styles.percent}>

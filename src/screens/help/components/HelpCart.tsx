@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {MinusIcon, PlusIcon} from '../../../assets/icons/iconst';
 import {COLORS} from '../../../constants/Colors';
 import Text from '../../../constants/Text';
+import IconAntDesing from 'react-native-vector-icons/AntDesign';
 
 const HelpCart = ({title, content}: any) => {
   const [active, setActive] = useState(true);
@@ -15,9 +16,9 @@ const HelpCart = ({title, content}: any) => {
           <Text>{title}</Text>
         </View>
         {active ? (
-          <PlusIcon fill={COLORS.gray} />
+          <IconAntDesing name="plus" size={24} color={COLORS.textColor} />
         ) : (
-          <MinusIcon fill={COLORS.gray} />
+          <IconAntDesing name="minus" size={24} color={COLORS.textColor} />
         )}
       </TouchableOpacity>
       {active ? null : <View style={styles.noActive}>{content}</View>}

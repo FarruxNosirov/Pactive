@@ -49,10 +49,10 @@ const ProfileScreen = () => {
           text="Newsletter"
         />
         <ProfileCart
-          iconName="hand-left"
           iconBackgroundColor={COLORS.gray}
           text="Privacy Policy"
           rightIcon="chevron-thin-right"
+          IconIoniconsName={true}
         />
         <ProfileCart
           iconName="file-document"
