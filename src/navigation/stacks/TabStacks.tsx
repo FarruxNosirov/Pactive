@@ -26,7 +26,7 @@ const TabStacks = () => {
         },
       }}
       style={{
-        height: height / 1.5,
+        height: height / 1.2,
         paddingBottom: 20,
       }}>
       <Tab.Screen name={'Active'} component={PactActive} />

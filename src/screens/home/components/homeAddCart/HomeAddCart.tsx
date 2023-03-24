@@ -5,6 +5,10 @@ import MaterialShare from 'react-native-vector-icons/MaterialIcons';
 import {COLORS} from '../../../../constants/Colors';
 import Text from '../../../../constants/Text';
 const HomeAddCart = () => {
+  const inputValue = 'account-minus';
+  // MaterialCommunityIcons
+  // message
+
   return (
     <View style={styles.container}>
       <View style={styles.oneBox}>
@@ -41,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     borderRadius: 5,
-    borderBottomWidth: 2,
+    borderBottomWidth: 4,
     borderBottomColor: COLORS.pactiveBlue,
     backgroundColor: COLORS.pactiveLightGray,
     marginVertical: 10,
@@ -51,9 +55,8 @@ const styles = StyleSheet.create({
   oneBox: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '80%',
+    width: '70%',
     height: '100%',
-    borderWidth: 1,
   },
   addPerson: {},
   share: {},

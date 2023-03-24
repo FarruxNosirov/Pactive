@@ -10,6 +10,8 @@ import React from 'react';
 import Imagebacground from './Imagebacground';
 import {COLORS} from '../constants/Colors';
 import NavigationService from '../navigation/NavigationScren';
+import {useNavigation} from '@react-navigation/native';
+import {AllRoutes} from '../routes/AllRoutes';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TILE_WIDTH = Math.floor(SCREEN_WIDTH / 2) - 15;
 const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);
@@ -18,10 +20,13 @@ type propsType = {
   name?: string;
 };
 const PactItemCart = (props: propsType) => {
+  const navigation: any = useNavigation();
   return (
     <TouchableOpacity
       style={styles.tile}
-      onPress={() => NavigationService.navigate('PactSocialAll')}>
+      onPress={() =>
+        navigation.navigate(AllRoutes.PactsStacks, {screen: 'PactSocialAll'})
+      }>
       <View style={styles.iconstContent}>
         <View style={styles.iconst}>
           <Image

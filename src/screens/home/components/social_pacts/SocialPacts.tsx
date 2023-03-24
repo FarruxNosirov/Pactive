@@ -12,6 +12,8 @@ import React from 'react';
 import {COLORS} from '../../../../constants/Colors';
 import PactItemCart from '../../../../components/PactItemCart';
 import NavigationService from '../../../../navigation/NavigationScren';
+import {useNavigation} from '@react-navigation/native';
+import {AllRoutes} from '../../../../routes/AllRoutes';
 const data = [
   {id: 0, name: 'salom salom salom salom '},
   {id: 1, name: 'salom salom salom salom '},
@@ -22,6 +24,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 const TILE_WIDTH = Math.floor(SCREEN_WIDTH / 2) - 15;
 const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);
 const SocialPacts = () => {
+  const navigation = useNavigation();
   return (
     <FlatList
       ListHeaderComponent={
