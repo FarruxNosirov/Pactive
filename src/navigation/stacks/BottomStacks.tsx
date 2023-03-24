@@ -4,12 +4,6 @@ import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {AllRoutes} from '../../routes/AllRoutes';
 
-import {
-  HomeIconActive,
-  HomeIconNotActive,
-  ProfileIconActive,
-  ProfileIconNotActive,
-} from '../../assets/icons/iconst';
 import {COLORS} from '../../constants/Colors';
 import HelpStacks from './HelpStack';
 import HomeStacks from './HomeStacks';

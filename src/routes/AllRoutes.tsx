@@ -35,4 +35,5 @@ export const AllRoutes = {
   PactSocialAll: 'PactSocialAll',
   ReportPact: 'ReportPact',
   HistoryPact: 'HistoryPact',
+  Notifications: 'Notifications',
 };
