@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
   ImageBackground,
   TouchableOpacity,
   Dimensions,
@@ -11,7 +10,7 @@ import {
   Image,
   FlatList,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {COLORS} from '../../../../../constants/Colors';
 import GoBacknavbar from '../../../../../components/gobacknavbar/goBacknavbar';
 import NavigationService from '../../../../../navigation/NavigationScren';
@@ -39,7 +38,7 @@ const DATA = [
     id: '1',
     title: 'WALKING',
     Icon: Walking,
-    isPress: false,
+    isPress: true,
   },
   {
     id: '2',
@@ -84,12 +83,49 @@ const DATA = [
     isPress: false,
   },
 ];
+const WalkingData = [
+  {
+    id: '1',
+    title: 'Km',
+    isPress: true,
+  },
+  {
+    id: '2',
+    title: 'Metres',
+    isPress: false,
+  },
+  {
+    id: '3',
+    title: 'Hours',
+    isPress: false,
+  },
+  {
+    id: '4',
+    title: 'Minutes',
+    isPress: false,
+  },
+  {
+    id: '5',
+    title: 'Steps',
+    isPress: false,
+  },
+  {
+    id: '6',
+    title: 'Count',
+    isPress: false,
+  },
+  {
+    id: '7',
+    title: 'Yes/No',
+    isPress: false,
+  },
+];
 const height = Dimensions.get('window').height;
 
 const CreatePactScreen = () => {
   const [data, setData] = useState(DATA);
-  const [idDate, setIdDate] = useState<any>();
-  const [url, setUrl] = useState<any>('');
+  const [walkingData, setWalkingData] = useState(WalkingData);
+  const flatlistRef: any = useRef();
   const [state, setState] = useState<any>({
     firstname: '',
     email: '',
@@ -101,12 +137,40 @@ const CreatePactScreen = () => {
         item.id === id ? {...item, isPress: true} : {...item, isPress: false},
       ),
     );
-    setIdDate(id);
+    switch (id) {
+      case '2': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '3': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '4': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '5': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '6': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '7': {
+        setWalkingData(WalkingData);
+        break;
+      }
+      case '8': {
+        setWalkingData(WalkingData);
+        break;
+      }
+    }
   };
   const changePhoto = async () => {
     await launchImageLibrary({mediaType: 'photo'}, ({assets}: any) => {
       if (assets) {
-        setUrl(assets[0].uri);
         setState({
           ...state,
           photo: {
@@ -121,6 +185,9 @@ const CreatePactScreen = () => {
       }
     });
   };
+  const onPressFunction = () => {
+    flatlistRef.current.scrollToEnd();
+  };
 
   return (
     <View style={{flex: 1, backgroundColor: COLORS.white}}>
@@ -133,6 +200,7 @@ const CreatePactScreen = () => {
           backgroundColor="#9999A9"
         />
         <FlatList
+          ref={flatlistRef}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             <>
@@ -188,12 +256,14 @@ const CreatePactScreen = () => {
               isPressed={item.isPress}
               Icon={item.Icon}
               title={item.title}
-              onPress={() => onPressActivity(item.id)}
+              onPress={() => {
+                onPressActivity(item.id), onPressFunction();
+              }}
             />
           )}
           ListFooterComponent={
             <>
-              <Measurement idDate={idDate} />
+              <Measurement walkingData={walkingData} />
               <ButtomHeght height={100} />
             </>
           }

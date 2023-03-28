@@ -6,61 +6,26 @@ import SwitchPro from './SwitchPro';
 import Target from './Target';
 import MesseageActive from '../../../../../../components/MesseageActive';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
-import {launchImageLibrary} from 'react-native-image-picker';
-
-const WalkingData = [
-  {
-    id: '1',
-    title: 'Km',
-    isPress: false,
-  },
-  {
-    id: '2',
-    title: 'Metres',
-    isPress: false,
-  },
-  {
-    id: '3',
-    title: 'Hours',
-    isPress: false,
-  },
-  {
-    id: '4',
-    title: 'Minutes',
-    isPress: false,
-  },
-  {
-    id: '5',
-    title: 'Steps',
-    isPress: false,
-  },
-  {
-    id: '6',
-    title: 'Count',
-    isPress: false,
-  },
-  {
-    id: '7',
-    title: 'Yes/No',
-    isPress: false,
-  },
-];
 
 type propsType = {
-  idDate?: any;
+  walkingData?: any;
 };
 const Measurement = (props: propsType) => {
-  console.log(props.idDate);
+  const [data, setData] = useState(props?.walkingData);
+  const [size, setSize] = useState(props?.walkingData[0].title);
+  const [sizeName, setSizeName] = useState(size);
 
-  const [data, setData] = useState(WalkingData);
-
-  const onPressActivity = (id: string) => {
-    setData(oldData =>
+  const onPressActivity = (value: any) => {
+    setSize(value.title);
+    setData((oldData: any[]) =>
       oldData.map(item =>
-        item.id === id ? {...item, isPress: true} : {...item, isPress: false},
+        item.id === value.id
+          ? {...item, isPress: true}
+          : {...item, isPress: false},
       ),
     );
   };
+  console.log('ItemName', sizeName);
 
   return (
     <View style={styles.container}>
@@ -72,13 +37,15 @@ const Measurement = (props: propsType) => {
           <RadioGroup
             value={item.title}
             isPress={item.isPress}
-            onPress={() => onPressActivity(item.id)}
+            onPress={() => onPressActivity(item)}
           />
         )}
         numColumns={3}
         columnWrapperStyle={{width: '100%'}}
       />
-      <Target inputValue="0" inputTitle="kilometres" btnName="0.25 km" />
+      {size == 'Yes/No' ? null : (
+        <Target inputValue="0" inputTitle={'Metres'} btnName="0.25 km" />
+      )}
       <View
         style={{
           paddingTop: 30,

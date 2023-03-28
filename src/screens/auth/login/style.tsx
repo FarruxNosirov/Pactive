@@ -4,9 +4,9 @@ import {COLORS} from '../../../constants/Colors';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: COLORS.white,
   },
   signInContentWrapper: {
-    flex: 1,
     backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
@@ -106,12 +106,17 @@ export const styles = StyleSheet.create({
     fontWeight: '400',
     backgroundColor: COLORS.transparent,
     flexGrow: 1,
-    height: 20,
+    height: 40,
     color: COLORS.white,
+    padding: 0,
+    marginTop: 5,
   },
   inputContainer: {
     backgroundColor: COLORS.transparent,
     flexGrow: 1,
+    padding: 0,
+    margin: 0,
+    height: '100%',
   },
   codeTextStyle: {
     color: COLORS.white,
@@ -125,5 +130,7 @@ export const styles = StyleSheet.create({
   inputContainer2: {
     backgroundColor: COLORS.transparent,
     width: '100%',
+    height: 50,
+    alignItems: 'center',
   },
 });

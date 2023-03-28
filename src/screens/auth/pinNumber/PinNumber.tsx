@@ -7,13 +7,14 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import {AllRoutes} from '../../../routes/AllRoutes';
+
 const PinNumber = () => {
   const CELL_COUNT = 6;
-
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
+  const [code, setCode] = useState('');
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
@@ -22,8 +23,18 @@ const PinNumber = () => {
   if (value.length === 6) {
     disiblet = false;
   }
-
+  const params = useRoute();
+  console.log(JSON.stringify(params.params, null, 2));
   const navigation = useNavigation();
+
+  // const siginIn = async () => {
+  //   try {
+  //     await confirm.confirm(code);
+  //   } catch (error) {
+  //     console.log('Invalid code.');
+  //   }
+  // };
+
   return (
     <View style={{flex: 1}}>
       <ImageBackground
