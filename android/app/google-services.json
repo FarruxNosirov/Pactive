@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1046972299611",
+    "project_id": "pactive-3f8b8",
+    "storage_bucket": "pactive-3f8b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046972299611:android:f8fe95eec1e9f4a6a1827e",
+        "android_client_info": {
+          "package_name": "com.pactive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046972299611-4egsevmve7s0hlfm5m0j3t9ap8rdgrog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX49C-4oINQIR1a6yCZStN7otq0aQOdYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046972299611-4egsevmve7s0hlfm5m0j3t9ap8rdgrog.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1046972299611-mnckqkbbqqbn9lu31fethin9n8nivr08.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.pactive"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {
+  KeyboardAvoidingView,
   Platform,
   ScrollView,
   Text,
@@ -96,272 +97,280 @@ const Register = (props: any) => {
         name="Cancel"
         backgroundColor="#9999A9"
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.heroHeaderWrapper]}>
-          <Imagebacground
-            width={'100%'}
-            height={220}
-            imageUrl={require('../../../assets/images/heroImages/home-hero-small.png')}
-            title="Account"
-            boxShadow={true}
-          />
-          <ImageEdit changePhoto={changePhoto} state={url} />
-        </View>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        keyboardVerticalOffset={80}>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={[styles.heroHeaderWrapper]}>
+            <Imagebacground
+              width={'100%'}
+              height={220}
+              imageUrl={require('../../../assets/images/heroImages/home-hero-small.png')}
+              title="Account"
+              boxShadow={true}
+            />
+            <ImageEdit changePhoto={changePhoto} state={url} />
+          </View>
 
-        <View
-          style={{
-            marginLeft: 20,
-            marginRight: 20,
-            paddingBottom: 30,
-            flex: 1,
-            marginTop: 50,
-          }}>
-          <View style={styles.textInputContainer}>
-            <Text style={styles.inputLabel}>FIRST NAME</Text>
-            <TextInput
-              style={styles.inputField}
-              onChangeText={e => onStateChange(e, 'firstname')}
-              value={state.firstname}
-            />
-            {state.firstname.length <= 0 ? (
-              <Text style={styles.inputError}>You must enter a name</Text>
-            ) : null}
-          </View>
-          <View style={styles.textInputContainer}>
-            <Text style={styles.inputLabel}>SURNAME</Text>
-            <TextInput
-              style={styles.inputField}
-              onChangeText={e => onStateChange(e, 'surname')}
-              value={state.surname}
-            />
-            {state.surname.length <= 0 ? (
-              <Text style={styles.inputError}>
-                You must enter a family name
-              </Text>
-            ) : null}
-          </View>
-          <View style={styles.textInputContainer}>
-            <Text style={styles.inputLabel}>DISPLAY NAME</Text>
-            <TextInput
-              style={styles.inputField}
-              value={state.displayname}
-              onChangeText={e => onStateChange(e, 'displayname')}
-            />
-            {state.displayname.length <= 0 ? (
-              <Text style={styles.inputError}>
-                Display Name is required for social message feeds.
-              </Text>
-            ) : null}
-          </View>
-          <View style={styles.textInputContainer}>
-            <Text style={styles.inputLabel}>EMAIL</Text>
-            <TextInput
-              style={styles.inputField}
-              onChangeText={e => onStateChange(e, 'email')}
-              value={state.email}
-            />
-            {state.email.length <= 0 ? (
-              <Text style={styles.inputError}>
-                You must enter a valid email addresss
-              </Text>
-            ) : null}
-          </View>
-          {/* DATE OF BIRTH */}
-          <View style={styles.textInputContainer}>
-            <Text style={styles.inputLabel}>DATE OF BIRTH</Text>
-            <DatePicker
-              modal
-              mode="date"
-              open={openDate}
-              date={date}
-              onConfirm={date => {
-                setOpenDate(false);
-                setDate(date);
-              }}
-              onCancel={() => {
-                setOpenDate(false);
-              }}
-            />
-            <TextInput
-              style={styles.inputField}
-              onPressIn={() => setOpenDate(true)}
-              value={date.toISOString().split('T')[0]}
-              editable={false}
-              selectTextOnFocus={false}
-            />
-          </View>
-          {/* GENDER */}
-          <View style={{marginBottom: 30, marginTop: 30}}>
-            <Text style={styles.inputLabel}>GENDER</Text>
-            <View style={styles.radioBtn}>
-              {data.map((item, index) => {
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.radioRadioGroupItem}
-                    onPress={() => {
-                      setGender(item.name);
-                      setState({...state, gender: item.name});
-                    }}>
-                    <View style={styles.radioRadioGroupItemIndicator}>
-                      {gender === item.name ? (
-                        <View style={styles.radioRadioGroupItemIndicatorDot} />
-                      ) : null}
-                    </View>
-                    <Text
-                      style={{
-                        fontSize: 16,
-                        color: COLORS.textColor,
+          <View
+            style={{
+              marginLeft: 20,
+              marginRight: 20,
+              paddingBottom: 30,
+              flex: 1,
+              marginTop: 50,
+            }}>
+            <View style={styles.textInputContainer}>
+              <Text style={styles.inputLabel}>FIRST NAME</Text>
+              <TextInput
+                style={styles.inputField}
+                onChangeText={e => onStateChange(e, 'firstname')}
+                value={state.firstname}
+              />
+              {state.firstname.length <= 0 ? (
+                <Text style={styles.inputError}>You must enter a name</Text>
+              ) : null}
+            </View>
+            <View style={styles.textInputContainer}>
+              <Text style={styles.inputLabel}>SURNAME</Text>
+              <TextInput
+                style={styles.inputField}
+                onChangeText={e => onStateChange(e, 'surname')}
+                value={state.surname}
+              />
+              {state.surname.length <= 0 ? (
+                <Text style={styles.inputError}>
+                  You must enter a family name
+                </Text>
+              ) : null}
+            </View>
+            <View style={styles.textInputContainer}>
+              <Text style={styles.inputLabel}>DISPLAY NAME</Text>
+              <TextInput
+                style={styles.inputField}
+                value={state.displayname}
+                onChangeText={e => onStateChange(e, 'displayname')}
+              />
+              {state.displayname.length <= 0 ? (
+                <Text style={styles.inputError}>
+                  Display Name is required for social message feeds.
+                </Text>
+              ) : null}
+            </View>
+            <View style={styles.textInputContainer}>
+              <Text style={styles.inputLabel}>EMAIL</Text>
+              <TextInput
+                style={styles.inputField}
+                onChangeText={e => onStateChange(e, 'email')}
+                value={state.email}
+              />
+              {state.email.length <= 0 ? (
+                <Text style={styles.inputError}>
+                  You must enter a valid email addresss
+                </Text>
+              ) : null}
+            </View>
+            {/* DATE OF BIRTH */}
+            <View style={styles.textInputContainer}>
+              <Text style={styles.inputLabel}>DATE OF BIRTH</Text>
+              <DatePicker
+                modal
+                mode="date"
+                open={openDate}
+                date={date}
+                onConfirm={date => {
+                  setOpenDate(false);
+                  setDate(date);
+                }}
+                onCancel={() => {
+                  setOpenDate(false);
+                }}
+              />
+              <TextInput
+                style={styles.inputField}
+                onPressIn={() => setOpenDate(true)}
+                value={date.toISOString().split('T')[0]}
+                editable={false}
+                selectTextOnFocus={false}
+              />
+            </View>
+            {/* GENDER */}
+            <View style={{marginBottom: 30, marginTop: 30}}>
+              <Text style={styles.inputLabel}>GENDER</Text>
+              <View style={styles.radioBtn}>
+                {data.map((item, index) => {
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.radioRadioGroupItem}
+                      onPress={() => {
+                        setGender(item.name);
+                        setState({...state, gender: item.name});
                       }}>
-                      {item.name}
-                    </Text>
-                  </TouchableOpacity>
-                );
-              })}
+                      <View style={styles.radioRadioGroupItemIndicator}>
+                        {gender === item.name ? (
+                          <View
+                            style={styles.radioRadioGroupItemIndicatorDot}
+                          />
+                        ) : null}
+                      </View>
+                      <Text
+                        style={{
+                          fontSize: 16,
+                          color: COLORS.textColor,
+                        }}>
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
             </View>
-          </View>
-          {/* YOUR HEIGHT */}
-          <View>
+            {/* YOUR HEIGHT */}
             <View>
-              <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
-              <View style={styles.switchWrapper}>
-                <Text style={styles.switchLabelLeft}>ft'in</Text>
-                <Switch
-                  value={checkBox.active1}
-                  onValueChange={() =>
-                    setCheckBox({...checkBox, active1: !checkBox.active1})
-                  }
-                  activeText={''}
-                  inActiveText={''}
-                  circleSize={30}
-                  barHeight={20}
-                  circleBorderWidth={0}
-                  backgroundActive={'#CDCDCD'}
-                  backgroundInactive={'#CDCDCD'}
-                  circleActiveColor={'#16E9A3'}
-                  circleInActiveColor={'#16E9A3'}
-                  containerStyle={{
-                    overflow: 'visible',
-                    borderWidth: 0,
-                    marginTop: 20,
-                    marginBottom: 20,
-                  }}
-                  disabled={false}
-                />
-                <Text style={styles.switchLabelRight}>cm</Text>
-              </View>
-            </View>
-            {checkBox.active1 ? (
               <View>
-                <Text style={styles.inputLabel}>CM</Text>
-                <TextInput
-                  style={styles.inputField}
-                  onChangeText={e => onStateChange(e, 'cmvalyu')}
-                  value={state.cmvalyu}
-                />
-              </View>
-            ) : (
-              <View
-                style={{
-                  width: '100%',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>FT</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'ftvalyu')}
-                    value={state.ftvalyu}
+                <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
+                <View style={styles.switchWrapper}>
+                  <Text style={styles.switchLabelLeft}>ft'in</Text>
+                  <Switch
+                    value={checkBox.active1}
+                    onValueChange={() =>
+                      setCheckBox({...checkBox, active1: !checkBox.active1})
+                    }
+                    activeText={''}
+                    inActiveText={''}
+                    circleSize={30}
+                    barHeight={20}
+                    circleBorderWidth={0}
+                    backgroundActive={'#CDCDCD'}
+                    backgroundInactive={'#CDCDCD'}
+                    circleActiveColor={'#16E9A3'}
+                    circleInActiveColor={'#16E9A3'}
+                    containerStyle={{
+                      overflow: 'visible',
+                      borderWidth: 0,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}
+                    disabled={false}
                   />
-                </View>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>IN</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'invalyu')}
-                    value={state.invalyu}
-                  />
+                  <Text style={styles.switchLabelRight}>cm</Text>
                 </View>
               </View>
-            )}
-          </View>
-          {/* YOUR WEIGHT */}
-          <View>
-            <View style={{marginTop: 20}}>
-              <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
-              <View style={styles.switchWrapper}>
-                <Text style={styles.switchLabelLeft}>st'lb</Text>
-                <Switch
-                  value={checkBox.active2}
-                  onValueChange={() =>
-                    setCheckBox({...checkBox, active2: !checkBox.active2})
-                  }
-                  activeText={''}
-                  inActiveText={''}
-                  circleSize={30}
-                  barHeight={20}
-                  circleBorderWidth={0}
-                  backgroundActive={'#CDCDCD'}
-                  backgroundInactive={'#CDCDCD'}
-                  circleActiveColor={'#16E9A3'}
-                  circleInActiveColor={'#16E9A3'}
-                  containerStyle={{
-                    overflow: 'visible',
-                    borderWidth: 0,
-                    marginTop: 20,
-                    marginBottom: 20,
-                  }}
-                  disabled={false}
-                />
-                <Text style={styles.switchLabelRight}>kg</Text>
-              </View>
+              {checkBox.active1 ? (
+                <View>
+                  <Text style={styles.inputLabel}>CM</Text>
+                  <TextInput
+                    style={styles.inputField}
+                    onChangeText={e => onStateChange(e, 'cmvalyu')}
+                    value={state.cmvalyu}
+                  />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>FT</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'ftvalyu')}
+                      value={state.ftvalyu}
+                    />
+                  </View>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>IN</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'invalyu')}
+                      value={state.invalyu}
+                    />
+                  </View>
+                </View>
+              )}
             </View>
-            {checkBox.active2 ? (
-              <View>
-                <Text style={styles.inputLabel}>KG</Text>
-                <TextInput
-                  style={styles.inputField}
-                  onChangeText={e => onStateChange(e, 'kgvalyu')}
-                  value={state.kgvalyu}
-                />
-              </View>
-            ) : (
-              <View
-                style={{
-                  width: '100%',
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>ST</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'stvalyu')}
-                    value={state.stvalyu}
+            {/* YOUR WEIGHT */}
+            <View>
+              <View style={{marginTop: 20}}>
+                <Text style={styles.inputLabel}>YOUR HEIGHT</Text>
+                <View style={styles.switchWrapper}>
+                  <Text style={styles.switchLabelLeft}>st'lb</Text>
+                  <Switch
+                    value={checkBox.active2}
+                    onValueChange={() =>
+                      setCheckBox({...checkBox, active2: !checkBox.active2})
+                    }
+                    activeText={''}
+                    inActiveText={''}
+                    circleSize={30}
+                    barHeight={20}
+                    circleBorderWidth={0}
+                    backgroundActive={'#CDCDCD'}
+                    backgroundInactive={'#CDCDCD'}
+                    circleActiveColor={'#16E9A3'}
+                    circleInActiveColor={'#16E9A3'}
+                    containerStyle={{
+                      overflow: 'visible',
+                      borderWidth: 0,
+                      marginTop: 20,
+                      marginBottom: 20,
+                    }}
+                    disabled={false}
                   />
-                </View>
-                <View style={{width: '49%'}}>
-                  <Text style={styles.inputLabel}>LB</Text>
-                  <TextInput
-                    style={styles.inputField}
-                    onChangeText={e => onStateChange(e, 'lbvalyu')}
-                    value={state.lbvalyu}
-                  />
+                  <Text style={styles.switchLabelRight}>kg</Text>
                 </View>
               </View>
-            )}
+              {checkBox.active2 ? (
+                <View>
+                  <Text style={styles.inputLabel}>KG</Text>
+                  <TextInput
+                    style={styles.inputField}
+                    onChangeText={e => onStateChange(e, 'kgvalyu')}
+                    value={state.kgvalyu}
+                  />
+                </View>
+              ) : (
+                <View
+                  style={{
+                    width: '100%',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                  }}>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>ST</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'stvalyu')}
+                      value={state.stvalyu}
+                    />
+                  </View>
+                  <View style={{width: '49%'}}>
+                    <Text style={styles.inputLabel}>LB</Text>
+                    <TextInput
+                      style={styles.inputField}
+                      onChangeText={e => onStateChange(e, 'lbvalyu')}
+                      value={state.lbvalyu}
+                    />
+                  </View>
+                </View>
+              )}
+            </View>
           </View>
-        </View>
 
-        <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
-          <DefaultButton
-            title="Save Profile"
-            onPress={() => navigation.navigate(AllRoutes.BottomStacks as never)}
-          />
-        </View>
-        <ButtomHeght height={30} />
-      </ScrollView>
+          <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
+            <DefaultButton
+              title="Save Profile"
+              onPress={() =>
+                navigation.navigate(AllRoutes.BottomStacks as never)
+              }
+            />
+          </View>
+          <ButtomHeght height={30} />
+        </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 };
