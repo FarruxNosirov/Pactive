@@ -86,8 +86,6 @@ const PactsScreen = () => {
           showsVerticalScrollIndicator={false}>
           <PactsHeader />
           <TabStacks />
-
-          {/* <PactActive /> */}
         </ScrollView>
         {/* <Tabs style={{transform: [{translateY: tabsTop}]}} /> */}
       </SafeAreaView>

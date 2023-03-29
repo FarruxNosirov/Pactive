@@ -1,18 +1,12 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
 import React from 'react';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
+import BottomHeight from '../../components/BottomHeight';
 import Imagebacground from '../../components/Imagebacground';
 import {COLORS} from '../../constants/Colors';
-import BottomHeight from '../../components/BottomHeight';
-import ProfileCart from './components/ProfileCart';
-import {ProfileIconActive, RightArrow} from '../../assets/icons/iconst';
 import NavigationService from '../../navigation/NavigationScren';
-import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
+import ProfileCart from './components/ProfileCart';
+import VersionNumber from 'react-native-version-number';
+import Text from '../../constants/Text';
 
 const ProfileScreen = () => {
   return (
@@ -70,13 +64,21 @@ const ProfileScreen = () => {
         <TouchableOpacity style={styles.siginOut}>
           <Text style={styles.siginOutTitle}>Sigin Out</Text>
         </TouchableOpacity>
-        <ProfileCart
-          iconName="trash-can-outline"
-          iconBackgroundColor={COLORS.black}
-          text="Delete account"
-          onPress={() => NavigationService.navigate('DeleteAccount')}
-        />
-        <BottomHeight height={50} />
+
+        <View style={{backgroundColor: COLORS.white, height: 150}}>
+          <ProfileCart
+            iconName="trash-can-outline"
+            iconBackgroundColor={COLORS.black}
+            text="Delete account"
+            onPress={() => NavigationService.navigate('DeleteAccount')}
+          />
+          <View style={{paddingTop: 20}}>
+            <Text style={styles.appVersion}>
+              App version: {VersionNumber.appVersion} - build{' '}
+              {VersionNumber.buildVersion}
+            </Text>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );
@@ -110,5 +112,10 @@ const styles = StyleSheet.create({
   siginOutTitle: {
     fontSize: 15,
     color: COLORS.black,
+  },
+  appVersion: {
+    paddingBottom: 28,
+    opacity: 0.8,
+    textAlign: 'center',
   },
 });

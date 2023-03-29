@@ -21,7 +21,7 @@
 		69CA856D987B41448F9E111E /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8B413FF35B144708F232D38 /* Nunito-Regular.ttf */; };
 		7A9497C9B6E24A93AD9DA2EC /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69BD609ECF29461EA362EAD6 /* Nunito-LightItalic.ttf */; };
 		80ABE9DC29C07828001FDACE /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 80ABE9DB29C07828001FDACE /* Fonts */; };
-		80DA2DA529D17B1E004E022E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80DA2DA429D17B1E004E022E /* GoogleService-Info.plist */; };
+		80EBD35529D4518600F497EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EBD35429D4518600F497EF /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8F2127BD8DDD9359DE9E5F24 /* libPods-pactive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677CFA8A8A9EF7F00FB0776 /* libPods-pactive.a */; };
 		A755BB1CDC0A4430B2F64C7D /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45780F2EAC9846708AB224CF /* Nunito-SemiBold.ttf */; };
@@ -86,7 +86,7 @@
 		80ABE9D929C07808001FDACE /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		80ABE9DA29C07808001FDACE /* Foundation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		80ABE9DB29C07828001FDACE /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../node_modules/react-native-vector-icons/Fonts"; sourceTree = "<group>"; };
-		80DA2DA429D17B1E004E022E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80EBD35429D4518600F497EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = pactive/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-pactive-pactiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pactive-pactiveTests.release.xcconfig"; path = "Target Support Files/Pods-pactive-pactiveTests/Pods-pactive-pactiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		9876D6F13E0944B097D4716F /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBold.ttf"; path = "../src/assets/fonts/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		13B07FAE1A68108700A75B9A /* pactive */ = {
 			isa = PBXGroup;
 			children = (
-				80DA2DA429D17B1E004E022E /* GoogleService-Info.plist */,
+				80EBD35429D4518600F497EF /* GoogleService-Info.plist */,
 				80ABE9DB29C07828001FDACE /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -358,7 +358,7 @@
 				C61279A575D34EF5A67D718F /* Nunito-SemiBoldItalic.ttf in Resources */,
 				14666E8F481242C0B665798A /* Quicksand-Bold.ttf in Resources */,
 				326FB0DD7E1D4BE3B7F458CD /* Quicksand-Medium.ttf in Resources */,
-				80DA2DA529D17B1E004E022E /* GoogleService-Info.plist in Resources */,
+				80EBD35529D4518600F497EF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

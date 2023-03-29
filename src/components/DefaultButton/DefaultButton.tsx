@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {COLORS} from '../../constants/Colors';
+import {fontBold} from '../../constants/Fonts';
 
 type Props = {
   title?: string;
@@ -77,8 +78,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    fontWeight: '700',
     color: '#000',
     textTransform: 'uppercase',
+    fontFamily: fontBold,
   },
 });

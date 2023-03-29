@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Dimensions,
   ImageBackground,
@@ -5,16 +6,12 @@ import {
   Text,
   View,
 } from 'react-native';
-import React from 'react';
 
-import {useNavigation} from '@react-navigation/native';
-import {AllRoutes} from '../../../../routes/AllRoutes';
-import NavigationService from '../../../../navigation/NavigationScren';
 import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
+import NavigationService from '../../../../navigation/NavigationScren';
 const height = Dimensions.get('window').height;
 
 const CreatePactBacground = () => {
-  const navigation = useNavigation();
   return (
     <View style={styles.progressContainer}>
       <ImageBackground

@@ -99,7 +99,7 @@ const Account = (props: any) => {
         backgroundColor={COLORS.fixedHeaderBg}
       />
       <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'position' : 'height'}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         keyboardVerticalOffset={80}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={[styles.heroHeaderWrapper]}>
@@ -331,7 +331,7 @@ const Account = (props: any) => {
           <View style={{width: '100%', paddingHorizontal: 20, marginTop: 30}}>
             <DefaultButton title="Save Profile" />
           </View>
-          <BottomHeight height={30} />
+          <BottomHeight height={100} />
         </ScrollView>
       </KeyboardAvoidingView>
     </View>
