@@ -1,8 +1,20 @@
-import {loginIn} from '../../api/requests';
+import {makeAutoObservable, runInAction} from 'mobx';
 
 export default class AuthStore {
-  clear() {
-    throw new Error('Method not implemented.');
+  constructor() {
+    makeAutoObservable(this);
   }
-  loginIn(payload: loginIn) {}
+
+  validationCode: string = '';
+  confirm: any = null;
+
+  // setValidationCode = (code: string) => {
+  //   runInAction(() => {
+  //     this.validationCode = code;
+  //   });
+  // };
+
+  setConfirm = (conform: any) => {
+    this.confirm = conform;
+  };
 }

@@ -1,40 +1,58 @@
 {
   "project_info": {
-    "project_number": "1046972299611",
-    "project_id": "pactive-3f8b8",
-    "storage_bucket": "pactive-3f8b8.appspot.com"
+    "project_number": "224437516150",
+    "firebase_url": "https://pactive-v2.firebaseio.com",
+    "project_id": "pactive-v2",
+    "storage_bucket": "pactive-v2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1046972299611:android:f8fe95eec1e9f4a6a1827e",
+        "mobilesdk_app_id": "1:224437516150:android:a627526687318c9138ac57",
         "android_client_info": {
-          "package_name": "com.pactive"
+          "package_name": "com.koicapital.pactive"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1046972299611-4egsevmve7s0hlfm5m0j3t9ap8rdgrog.apps.googleusercontent.com",
+          "client_id": "224437516150-05pl1280eohs1ed4n7pbvr3dc4kgu2oi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koicapital.pactive",
+            "certificate_hash": "527349a75786c39f62819a0300ab17442bbc8e14"
+          }
+        },
+        {
+          "client_id": "224437516150-u5v7jnm96nh00ckhhtf6k29gtcqigirp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koicapital.pactive",
+            "certificate_hash": "7957acaebb56e1e06d73122ac44fc2300feb2f53"
+          }
+        },
+        {
+          "client_id": "224437516150-lc5c7d3l6ou64c9sro082kvgiri7tcdn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCX49C-4oINQIR1a6yCZStN7otq0aQOdYw"
+          "current_key": "AIzaSyACJk-fr7_vrXcAasg5SO41Duyt4OMZj_E"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1046972299611-4egsevmve7s0hlfm5m0j3t9ap8rdgrog.apps.googleusercontent.com",
+              "client_id": "224437516150-lc5c7d3l6ou64c9sro082kvgiri7tcdn.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "1046972299611-mnckqkbbqqbn9lu31fethin9n8nivr08.apps.googleusercontent.com",
+              "client_id": "224437516150-ca3nrf4d5g5br940djevkkrug18f0jnc.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "org.reactjs.native.example.pactive"
+                "bundle_id": "com.koicapital.pactive",
+                "app_store_id": "1441960847"
               }
             }
           ]

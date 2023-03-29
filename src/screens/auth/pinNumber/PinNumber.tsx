@@ -9,12 +9,14 @@ import {
 } from 'react-native-confirmation-code-field';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {AllRoutes} from '../../../routes/AllRoutes';
+import {observer} from 'mobx-react';
+import useRootStore from '../../../hooks/useRootStore';
 
 const PinNumber = () => {
   const CELL_COUNT = 6;
+  const store = useRootStore();
   const [value, setValue] = useState('');
   const ref = useBlurOnFulfill({value, cellCount: CELL_COUNT});
-  const [code, setCode] = useState('');
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value,
     setValue,
@@ -27,13 +29,16 @@ const PinNumber = () => {
   console.log(JSON.stringify(params.params, null, 2));
   const navigation = useNavigation();
 
-  // const siginIn = async () => {
-  //   try {
-  //     await confirm.confirm(code);
-  //   } catch (error) {
-  //     console.log('Invalid code.');
-  //   }
-  // };
+  const siginIn = async () => {
+    try {
+      const data = await store.auth.confirm.confirm(value);
+      if (!!data) {
+        navigation.navigate(AllRoutes.OnboardingScreen as never);
+      }
+    } catch (error) {
+      console.log('Invalid code.', error);
+    }
+  };
 
   return (
     <View style={{flex: 1}}>
@@ -85,9 +90,7 @@ const PinNumber = () => {
               {backgroundColor: disiblet ? '#5A5A5A' : '#16E9A3'},
             ]}
             disabled={disiblet}
-            onPress={() =>
-              navigation.navigate(AllRoutes.OnboardingScreen as never)
-            }>
+            onPress={() => siginIn()}>
             <Text style={styles.buttonPrimaryLabel}>GET STARTED</Text>
           </TouchableOpacity>
         </View>
@@ -96,4 +99,4 @@ const PinNumber = () => {
   );
 };
 
-export default PinNumber;
+export default observer(PinNumber);

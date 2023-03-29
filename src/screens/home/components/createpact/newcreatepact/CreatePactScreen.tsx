@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.white,
-    fontSize: 30,
+    fontSize: 26,
   },
   imagediv: {
     marginTop: 50,

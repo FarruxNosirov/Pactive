@@ -9,12 +9,13 @@ import {
 import {styles} from './style';
 
 import auth from '@react-native-firebase/auth';
-import firebase from '@react-native-firebase/app';
 import {useNavigation} from '@react-navigation/native';
 import {CountryCode} from 'react-native-country-picker-modal';
 import Spinner from 'react-native-loading-spinner-overlay/lib';
 import PhoneInput from 'react-native-phone-number-input';
 import {AllRoutes} from '../../../routes/AllRoutes';
+import {observer} from 'mobx-react';
+import useRootStore from '../../../hooks/useRootStore';
 type FieldProps = {
   countryCode?: CountryCode;
   countryCodeNumber?: string;
@@ -26,11 +27,11 @@ const Login = (props: FieldProps) => {
   const [loading, setLoading] = useState(false);
   const [confirm, setConfirm] = useState<any>();
 
+  const navigation = useNavigation();
   const phoneInput = useRef<PhoneInput>(null);
   const valueLength = value.length >= 5 ? true : false;
   const disabled = checkbox && valueLength;
-
-  const navigation = useNavigation();
+  const store = useRootStore();
 
   const signInWithPhoneNumber = async (formattedValue: any) => {
     try {
@@ -40,14 +41,14 @@ const Login = (props: FieldProps) => {
       setLoading(false);
       if (!!confirmation) {
         navigation.navigate(AllRoutes.PinNumber as never);
+        store.auth.setConfirm(confirmation);
       }
     } catch (error) {
       console.log(error);
     }
   };
+
   console.log(JSON.stringify(confirm, null, 2));
-  const tokenId = firebase.auth().currentUser?.getIdToken();
-  console.log('tokenId :', tokenId);
 
   return (
     <View style={[styles.container]}>
@@ -129,4 +130,4 @@ const Login = (props: FieldProps) => {
     </View>
   );
 };
-export default Login;
+export default observer(Login);
