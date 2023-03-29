@@ -69,7 +69,6 @@ const Register = (props: any) => {
   let onStateChange = (e: Event, key: any) => {
     setState({...state, [key]: e});
   };
-  console.log(url);
 
   const changePhoto = async () => {
     await launchImageLibrary({mediaType: 'photo'}, ({assets}: any) => {

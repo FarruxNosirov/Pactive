@@ -1,7 +1,6 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import DefaultInput from './defaultInput/DefaultInput';
-import {ArrowBottomMarked, BottomArrow} from '../assets/icons/iconst';
 import {COLORS} from '../constants/Colors';
 import IconsDown from 'react-native-vector-icons/Entypo';
 type propsType = {

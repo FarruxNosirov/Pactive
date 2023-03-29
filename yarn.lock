@@ -1199,6 +1199,13 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@react-native-async-storage/async-storage@^1.18.0":
+  version "1.18.0"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.18.0.tgz#0cc05bcf715c7ab9edd5783bbe04b5e755ed30b1"
+  integrity sha512-E1KYIXlJTm4NUw1bRPdYueRdp8e//7pLb2i8JY+YIYSOxFi0usycFDXkkGgPqvfn7nW6o2G2TZvXUYpBVHenWA==
+  dependencies:
+    merge-options "^3.0.4"
+
 "@react-native-community/cli-clean@^9.2.1":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-clean/-/cli-clean-9.2.1.tgz#198c5dd39c432efb5374582073065ff75d67d018"
@@ -4430,6 +4437,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+is-plain-obj@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-plain-obj/-/is-plain-obj-2.1.0.tgz#45e42e37fccf1f40da8e5f76ee21515840c09287"
+  integrity sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==
+
 is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/is-plain-object/-/is-plain-object-2.0.4.tgz#2c163b3fafb1b606d9d17928f05c2a1c38e07677"
@@ -5372,6 +5384,13 @@ memoize-one@^5.0.0:
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
 
+merge-options@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/merge-options/-/merge-options-3.0.4.tgz#84709c2aa2a4b24c1981f66c179fe5565cc6dbb7"
+  integrity sha512-2Sug1+knBjkaMsMgf1ctR1Ujx+Ayku4EdJN4Z+C2+JzoeF7A3OZ9KM2GY0CpQS51NR61LTurMJrRKPhSs3ZRTQ==
+  dependencies:
+    is-plain-obj "^2.1.0"
+
 merge-stream@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/merge-stream/-/merge-stream-2.0.0.tgz#52823629a14dd00c9770fb6ad47dc6310f2c1f60"
@@ -5740,6 +5759,25 @@ mkdirp@^0.5.1:
   integrity sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw==
   dependencies:
     minimist "^1.2.6"
+
+mobx-react-lite@^4.0.0:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/mobx-react-lite/-/mobx-react-lite-4.0.2.tgz#bf4df238d17491cddb1021a49f79f8af50ed4260"
+  integrity sha512-5o7for7/5QLpgzKvA3ZjrO8TmfkZgVcSjwYalGlW6OkK/fCxmVlwbFeoWJQzWbkWSxlcaatTO0j4riAUvWoqMg==
+  dependencies:
+    use-sync-external-store "^1.2.0"
+
+mobx-react@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-8.0.0.tgz#ec3e13a19662f452f14d279c59168d94385c86f0"
+  integrity sha512-WKfYrxIDmI/ysmugybfWBFnKC0li4VvLHhfZqn1y5hXkOJ0selFFZ4rO8KHWZljWrzseNGRRqatYX9X4PaDD8A==
+  dependencies:
+    mobx-react-lite "^4.0.0"
+
+mobx@^6.9.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-6.9.0.tgz#8a894c26417c05bed2cf7499322e589ee9787397"
+  integrity sha512-HdKewQEREEJgsWnErClfbFoVebze6rGazxFLU/XUyrII8dORfVszN1V0BMRnQSzcgsNNtkX8DHj3nC6cdWE9YQ==
 
 modal-react-native-web@0.2.0:
   version "0.2.0"
@@ -7863,7 +7901,7 @@ use-latest-callback@^0.1.5:
   resolved "https://registry.yarnpkg.com/use-latest-callback/-/use-latest-callback-0.1.5.tgz#a4a836c08fa72f6608730b5b8f4bbd9c57c04f51"
   integrity sha512-HtHatS2U4/h32NlkhupDsPlrbiD27gSH5swBdtXbCAlc6pfOFzaj0FehW/FO12rx8j2Vy4/lJScCiJyM01E+bQ==
 
-use-sync-external-store@^1.0.0:
+use-sync-external-store@^1.0.0, use-sync-external-store@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==

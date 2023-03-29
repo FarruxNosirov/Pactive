@@ -1,10 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {
   ImageBackground,
-  KeyboardAvoidingView,
   Linking,
-  Platform,
-  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -12,29 +9,28 @@ import {
 import {styles} from './style';
 
 import auth from '@react-native-firebase/auth';
-import {CountryCode} from 'react-native-country-picker-modal';
-import PhoneInput from 'react-native-phone-number-input';
+import firebase from '@react-native-firebase/app';
 import {useNavigation} from '@react-navigation/native';
-import {AllRoutes} from '../../../routes/AllRoutes';
+import {CountryCode} from 'react-native-country-picker-modal';
 import Spinner from 'react-native-loading-spinner-overlay/lib';
+import PhoneInput from 'react-native-phone-number-input';
+import {AllRoutes} from '../../../routes/AllRoutes';
 type FieldProps = {
   countryCode?: CountryCode;
   countryCodeNumber?: string;
 };
 const Login = (props: FieldProps) => {
   const [checkbox, setCheckbox] = useState(false);
-
   const [value, setValue] = useState('');
   const [formattedValue, setFormattedValue] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [confirm, setConfirm] = useState<any>();
 
   const phoneInput = useRef<PhoneInput>(null);
-
   const valueLength = value.length >= 5 ? true : false;
   const disabled = checkbox && valueLength;
 
-  const [confirm, setConfirm] = useState<any>();
   const navigation = useNavigation();
-  const [loading, setLoading] = useState(false);
 
   const signInWithPhoneNumber = async (formattedValue: any) => {
     try {
@@ -49,8 +45,9 @@ const Login = (props: FieldProps) => {
       console.log(error);
     }
   };
-
   console.log(JSON.stringify(confirm, null, 2));
+  const tokenId = firebase.auth().currentUser?.getIdToken();
+  console.log('tokenId :', tokenId);
 
   return (
     <View style={[styles.container]}>

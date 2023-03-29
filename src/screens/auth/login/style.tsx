@@ -88,8 +88,9 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   image: {
-    flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
   },
   checkBox: {
     borderRadius: 3,
