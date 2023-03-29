@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 import RadioGroup from '../../../../../../components/radioGroup/RadioGroup';
 import {COLORS} from '../../../../../../constants/Colors';
 import SwitchPro from './SwitchPro';
@@ -11,7 +11,7 @@ type propsType = {
   walkingData?: any;
 };
 const Measurement = (props: propsType) => {
-  const [data, setData] = useState(props?.walkingData);
+  const [data, setData] = useState(props.walkingData);
   const [size, setSize] = useState(props?.walkingData[0].title);
   const [sizeName, setSizeName] = useState(size);
 
@@ -24,8 +24,15 @@ const Measurement = (props: propsType) => {
           : {...item, isPress: false},
       ),
     );
+    data?.map((item: any) =>
+      item.title === value.title ? setSizeName(value.title) : null,
+    );
   };
-  console.log('ItemName', sizeName);
+  // console.log('ItemName', JSON.stringify(props.walkingData, null, 2));
+
+  useEffect(() => {
+    setData(props.walkingData);
+  }, [props.walkingData]);
 
   return (
     <View style={styles.container}>
@@ -44,7 +51,7 @@ const Measurement = (props: propsType) => {
         columnWrapperStyle={{width: '100%'}}
       />
       {size == 'Yes/No' ? null : (
-        <Target inputValue="0" inputTitle={'Metres'} btnName="0.25 km" />
+        <Target inputValue="0" inputTitle={sizeName} btnName="0.25 km" />
       )}
       <View
         style={{

@@ -120,17 +120,59 @@ const WalkingData = [
     isPress: false,
   },
 ];
+const WalkingData2 = [
+  {
+    id: '1',
+    title: 'Km',
+    isPress: true,
+  },
+  {
+    id: '2',
+    title: 'Metres',
+    isPress: false,
+  },
+  {
+    id: '3',
+    title: 'Hours',
+    isPress: false,
+  },
+  {
+    id: '4',
+    title: 'Minutes',
+    isPress: false,
+  },
+  {
+    id: '5',
+    title: 'Steps',
+    isPress: false,
+  },
+  {
+    id: '6',
+    title: 'Count',
+    isPress: false,
+  },
+
+  {
+    id: '7',
+    title: 'Yes/No',
+    isPress: false,
+  },
+  {
+    id: '8',
+    title: 'Count',
+    isPress: false,
+  },
+];
 const height = Dimensions.get('window').height;
 
 const CreatePactScreen = () => {
   const [data, setData] = useState(DATA);
   const [walkingData, setWalkingData] = useState(WalkingData);
-  const flatlistRef: any = useRef();
-  const [state, setState] = useState<any>({
-    firstname: '',
-    email: '',
-    photo: '',
+  let flatlistRef: any = useRef();
+  const [state, setState] = useState({
+    photo: {},
   });
+  const [url, setUrl] = useState('');
   const onPressActivity = (id: string) => {
     setData(oldData =>
       oldData.map(item =>
@@ -138,41 +180,39 @@ const CreatePactScreen = () => {
       ),
     );
     switch (id) {
-      case '2': {
+      case '2':
+        setWalkingData(WalkingData2);
+        break;
+      case '3':
         setWalkingData(WalkingData);
         break;
-      }
-      case '3': {
+      case '4':
         setWalkingData(WalkingData);
         break;
-      }
-      case '4': {
+
+      case '5':
         setWalkingData(WalkingData);
         break;
-      }
-      case '5': {
+
+      case '6':
         setWalkingData(WalkingData);
         break;
-      }
-      case '6': {
+
+      case '7':
         setWalkingData(WalkingData);
         break;
-      }
-      case '7': {
+
+      case '8':
         setWalkingData(WalkingData);
         break;
-      }
-      case '8': {
-        setWalkingData(WalkingData);
-        break;
-      }
     }
   };
+
   const changePhoto = async () => {
     await launchImageLibrary({mediaType: 'photo'}, ({assets}: any) => {
       if (assets) {
+        setUrl(assets[0].uri);
         setState({
-          ...state,
           photo: {
             name: assets[0].fileName,
             type: assets[0].type,
@@ -188,17 +228,24 @@ const CreatePactScreen = () => {
   const onPressFunction = () => {
     flatlistRef.current.scrollToEnd();
   };
+  const imageUrildefault =
+    url.length > 0
+      ? {url}
+      : require('../../../../../assets/images/heroImages/home-hero.jpg');
 
   return (
     <View style={{flex: 1, backgroundColor: COLORS.white}}>
+      <GoBacknavbar
+        name="Cancel"
+        onPress={() => NavigationService.goBack()}
+        backgroundColor="#9999A9"
+      />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        keyboardVerticalOffset={60}>
-        <GoBacknavbar
-          name="Cancel"
-          onPress={() => NavigationService.goBack()}
-          backgroundColor="#9999A9"
-        />
+        ref={ref => {
+          flatlistRef = ref;
+        }}
+        keyboardVerticalOffset={flatlistRef.current}>
         <FlatList
           ref={flatlistRef}
           showsVerticalScrollIndicator={false}
@@ -206,7 +253,7 @@ const CreatePactScreen = () => {
             <>
               <View style={styles.progressContainer}>
                 <ImageBackground
-                  source={require('../../../../../assets/images/heroImages/home-hero.jpg')}
+                  source={imageUrildefault}
                   resizeMode="cover"
                   style={{
                     width: '100%',
