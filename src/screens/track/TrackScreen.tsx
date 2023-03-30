@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -7,16 +7,71 @@ import {
   View,
 } from 'react-native';
 
-import {RightArrow} from '../../assets/icons/iconst';
+import IconEntypo from 'react-native-vector-icons/Entypo';
+import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 import ButtomHeght from '../../components/BottomHeight';
 import Imagebacground from '../../components/Imagebacground';
 import GoBacknavbar from '../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../constants/Colors';
 import NavigationService from '../../navigation/NavigationScren';
 import TrackElements from './components/TrackElements';
-import IconEntypo from 'react-native-vector-icons/Entypo';
+import moment from 'moment';
 
 const TrackScreen = () => {
+  const formatDateString = (dateString: number | Date) => {
+    return moment(dateString).format('D, MMM YYYY');
+  };
+
+  const [state, setState] = useState({currentDate: new Date()});
+  const [disabled, setDisabled] = useState(true);
+
+  const getFormattedDateString = () => {
+    const today = new Date();
+    const currentDate = formatDateString(state.currentDate);
+    const formattedToday = formatDateString(today);
+    const formattedYesterday = formatDateString(
+      today.setDate(today.getDate() - 1),
+    );
+
+    let dateString = '';
+    if (currentDate === formattedToday) {
+      dateString = 'today';
+    } else if (currentDate === formattedYesterday) {
+      dateString = 'yesterday';
+    } else {
+      dateString = currentDate;
+    }
+    return dateString;
+  };
+
+  const navigateToPreviousDate = () => {
+    const currentDate = state.currentDate;
+    setState({
+      currentDate: new Date(currentDate.setDate(currentDate.getDate() - 1)),
+    });
+  };
+
+  const navigateToNextDate = () => {
+    const currentDate = state.currentDate;
+    return setState({
+      currentDate: new Date(currentDate.setDate(currentDate.getDate() + 1)),
+    });
+  };
+
+  useEffect(() => {
+    const formattedCurrentDate = formatDateString(state.currentDate);
+    const formattedToday = formatDateString(new Date());
+    if (formattedCurrentDate === formattedToday) {
+      setDisabled(true);
+    } else {
+      setDisabled(false);
+    }
+  }, [state.currentDate]);
+
+  const dateString = getFormattedDateString();
+
+  // console.log(disabled);
+
   return (
     <View style={styles.container}>
       <GoBacknavbar
@@ -34,14 +89,21 @@ const TrackScreen = () => {
           title="Track Progress"
         />
         <View style={styles.data}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={navigateToPreviousDate}>
             <IconEntypo
               name="chevron-small-left"
               style={{color: 'white', fontSize: 26}}
             />
           </TouchableOpacity>
-          <Text style={styles.dataTitle}>today</Text>
-          <TouchableOpacity>
+          <View style={styles.calendar}>
+            <Text style={styles.dataTitle}>{dateString}</Text>
+
+            <IconMaterial
+              name="calendar"
+              style={{color: '#fff', fontSize: 20}}
+            />
+          </View>
+          <TouchableOpacity onPress={navigateToNextDate} disabled={disabled}>
             <IconEntypo
               name="chevron-small-right"
               style={{color: 'white', fontSize: 26}}
@@ -73,10 +135,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   dataTitle: {
-    marginLeft: 20,
-    marginRight: 20,
     color: COLORS.white,
     fontSize: 20,
     textTransform: 'uppercase',
+    marginRight: 5,
+  },
+  calendar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 15,
   },
 });

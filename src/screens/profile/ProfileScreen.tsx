@@ -1,6 +1,5 @@
 import React from 'react';
 import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
-import BottomHeight from '../../components/BottomHeight';
 import Imagebacground from '../../components/Imagebacground';
 import {COLORS} from '../../constants/Colors';
 import NavigationService from '../../navigation/NavigationScren';
@@ -41,6 +40,7 @@ const ProfileScreen = () => {
           iconName="newspaper"
           iconBackgroundColor={COLORS.newsLetter}
           text="Newsletter"
+          chackbox={true}
         />
         <ProfileCart
           iconBackgroundColor={COLORS.gray}
