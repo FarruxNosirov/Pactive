@@ -1,13 +1,15 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useState} from 'react';
 import {
   GestureResponderEvent,
   StyleSheet,
+  Switch,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 
 import {COLORS} from '../../../constants/Colors';
+// import {Switch} from 'react-native-switch';
 
 type SettingsItemProps = {
   iconName?: string;
@@ -17,6 +19,7 @@ type SettingsItemProps = {
   rightText?: string;
   iconBackgroundColor?: string;
   IconIoniconsName?: boolean;
+  chackbox?: boolean;
 };
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -30,7 +33,9 @@ const ProfileCart = ({
   rightText,
   iconBackgroundColor,
   IconIoniconsName,
+  chackbox,
 }: SettingsItemProps) => {
+  const [switchValue, setSwitchValue] = useState(false);
   return (
     <TouchableOpacity style={styles.settingsButton} onPress={onPress}>
       <View style={styles.container}>
@@ -54,6 +59,13 @@ const ProfileCart = ({
           <Text style={styles.text}>{text}</Text>
           {rightIcon ? <IconEntypo name={rightIcon} /> : null}
           {rightText ? <Text style={styles.rightText}>{rightText}</Text> : null}
+
+          {chackbox ? (
+            <Switch
+              value={switchValue}
+              onValueChange={() => setSwitchValue(a => !a)}
+            />
+          ) : null}
         </View>
       </View>
     </TouchableOpacity>
@@ -92,7 +104,7 @@ const styles = StyleSheet.create({
   },
   rightBox: {
     borderBottomWidth: 1,
-    borderBottomColor: COLORS.textColor,
+    borderBottomColor: COLORS.backContainer,
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '90%',

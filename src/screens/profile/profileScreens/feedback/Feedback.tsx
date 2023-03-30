@@ -9,6 +9,7 @@ import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
 import DefaultInput from '../../../../components/defaultInput/DefaultInput';
 import NavigationService from '../../../../navigation/NavigationScren';
 import Text from '../../../../constants/Text';
+import starIon from 'react-native-vector-icons/Feather';
 
 const Feedback = () => {
   const [rate, setRate] = useState(0);
@@ -59,13 +60,13 @@ const Feedback = () => {
             ratingCount={5}
             imageSize={35}
             ratingColor={COLORS.pactiveGreen}
-            ratingBackgroundColor={COLORS.white}
+            ratingBackgroundColor="grey"
             onFinishRating={(e: number) => setRate(e)}
             startingValue={rate}
             type="custom"
-            style={{
-              marginVertical: 27,
-            }}
+            // style={{
+            //   marginVertical: 27,
+            // }}
             showRating={false}
           />
         </View>

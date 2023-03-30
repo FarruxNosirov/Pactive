@@ -168,11 +168,12 @@ const height = Dimensions.get('window').height;
 const CreatePactScreen = () => {
   const [data, setData] = useState(DATA);
   const [walkingData, setWalkingData] = useState(WalkingData);
-  let flatlistRef: any = useRef();
+  const [url, setUrl] = useState('');
   const [state, setState] = useState({
     photo: {},
   });
-  const [url, setUrl] = useState('');
+
+  let flatlistRef: any = useRef();
   const onPressActivity = (id: string) => {
     setData(oldData =>
       oldData.map(item =>
@@ -242,9 +243,6 @@ const CreatePactScreen = () => {
       />
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-        ref={ref => {
-          flatlistRef = ref;
-        }}
         keyboardVerticalOffset={flatlistRef.current}>
         <FlatList
           ref={flatlistRef}

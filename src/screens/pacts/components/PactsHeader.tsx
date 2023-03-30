@@ -101,6 +101,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
     position: 'absolute',
+    zIndex: 10,
   },
   heroHeaderContent: {
     alignItems: 'center',
