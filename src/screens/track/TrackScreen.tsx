@@ -1,11 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
 
 import IconEntypo from 'react-native-vector-icons/Entypo';
 import IconMaterial from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -16,6 +10,7 @@ import {COLORS} from '../../constants/Colors';
 import NavigationService from '../../navigation/NavigationScren';
 import TrackElements from './components/TrackElements';
 import moment from 'moment';
+import Text from '../../constants/Text';
 
 const TrackScreen = () => {
   const formatDateString = (dateString: number | Date) => {

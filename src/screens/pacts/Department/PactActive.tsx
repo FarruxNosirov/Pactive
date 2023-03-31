@@ -1,8 +1,9 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import {COLORS} from '../../../constants/Colors';
 import {HelpData} from '../../help/components/DataHelp';
 import ActiveCart from '../components/ActiveCart';
 import BottomHeight from '../../../components/BottomHeight';
+import Text from '../../../constants/Text';
 
 const Data = [
   {
@@ -27,23 +28,14 @@ const Data = [
     name: 'salom',
   },
 ];
-function Content({title}: any) {
-  return (
-    <View style={styles.sectionContainer}>
-      <Text style={styles.sectionTitle}>{title}</Text>
-      <Text style={styles.sectionDescription}>
-        Edit <Text style={styles.highlight}>App.js</Text> to change this screen
-        and then come back to see your edits.
-      </Text>
-    </View>
-  );
-}
+
 const PactActive = () => {
   return (
     <View
       style={{backgroundColor: COLORS.white, height: '100%', paddingTop: 20}}>
       <FlatList
         data={Data}
+        bounces={false}
         showsVerticalScrollIndicator={false}
         renderItem={({item}) => {
           return (

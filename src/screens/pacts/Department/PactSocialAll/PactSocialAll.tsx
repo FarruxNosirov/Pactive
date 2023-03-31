@@ -1,21 +1,19 @@
+import React, {useState} from 'react';
 import {
   Dimensions,
   ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
-import Imagebacground from '../../../../components/Imagebacground';
 import BackEditHeader from '../../../../components/BackEditHeader';
-import {COLORS} from '../../../../constants/Colors';
-import NavigationService from '../../../../navigation/NavigationScren';
-import PactSocialAllHeader from './components/PactSocialAllHeader';
 import BottomHeight from '../../../../components/BottomHeight';
-import InfoSocial from './components/InfoSocial';
-import AboutUsSocial from './components/AboutUsSocial';
+import {COLORS} from '../../../../constants/Colors';
+import Text from '../../../../constants/Text';
+import NavigationService from '../../../../navigation/NavigationScren';
 import InfoPact from '../PactActiveAll/components/infoPact/InfoPact';
+import AboutUsSocial from './components/AboutUsSocial';
+import PactSocialAllHeader from './components/PactSocialAllHeader';
 
 const height = Dimensions.get('window').height;
 const PactSocialAll = () => {

@@ -1,7 +1,9 @@
 import React from 'react';
 import {
   FlatList,
+  Platform,
   ScrollView,
+  StatusBar,
   StyleSheet,
   TouchableOpacity,
   View,
@@ -52,11 +54,11 @@ const HomeScreen = () => {
               <Text style={{color: COLORS.white}}>
                 You have new notifications - View All
               </Text>
-            </TouchableOpacity>
-            <HomeVedio />
-            <CreatePactBtn />
-            <SocialPacts />
-            <ButtomHeght height={20} /> */}
+            </TouchableOpacity> */}
+            {/* <HomeVedio /> */}
+            {/* <CreatePactBtn /> */}
+            {/* <SocialPacts /> */}
+            {/* <ButtomHeght height={20} /> */}
 
             <View style={styles.notificationContainer}>
               <View style={styles.notificationContent}>

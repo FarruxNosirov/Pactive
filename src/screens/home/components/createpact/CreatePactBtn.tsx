@@ -1,15 +1,10 @@
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../../constants/Colors';
 import {PlusIcon} from '../../../../assets/icons/iconst';
 import NavigationService from '../../../../navigation/NavigationScren';
 import IconAntDesign from 'react-native-vector-icons/AntDesign';
+import Text from '../../../../constants/Text';
 
 const CreatePactBtn = () => {
   return (

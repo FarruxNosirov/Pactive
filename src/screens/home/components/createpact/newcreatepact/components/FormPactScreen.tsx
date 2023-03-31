@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
@@ -10,6 +9,7 @@ import {
 import DefaultInput from '../../../../../../components/defaultInput/DefaultInput';
 import {COLORS} from '../../../../../../constants/Colors';
 import DatePicker from 'react-native-date-picker';
+import Text from '../../../../../../constants/Text';
 
 const FormPactScreen = () => {
   const [open, setOpen] = useState({

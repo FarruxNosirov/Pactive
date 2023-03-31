@@ -1,6 +1,6 @@
 // @flow
 
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import Svg, {
   ClipPath,
   Defs,
@@ -10,6 +10,7 @@ import Svg, {
   Path,
   Stop,
 } from 'react-native-svg';
+import Text from '../constants/Text';
 
 const width = 173.20508075688772;
 const height = 200;
@@ -147,5 +148,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: '80%',
     textTransform: 'uppercase',
+    fontSize: 13,
   },
 });

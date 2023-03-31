@@ -1,7 +1,8 @@
-import {Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Platform, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import DatePicker from 'react-native-date-picker';
 import {COLORS} from '../../constants/Colors';
+import Text from '../../constants/Text';
 type propsType = {
   setTime?: any;
   setData?: any;

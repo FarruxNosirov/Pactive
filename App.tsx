@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import AllNavigation from './src/navigation/AllNavigation';
-import {StatusBar} from 'react-native';
+import {Platform, StatusBar} from 'react-native';
+import {COLORS} from './src/constants/Colors';
 
 const App = () => {
   return (
     <>
-      <SafeAreaProvider>
-        <StatusBar animated={true} backgroundColor="#61dafb" />
+      <SafeAreaProvider style={{backgroundColor: COLORS.fixedHeaderBg}}>
+        <StatusBar
+          barStyle={'dark-content'}
+          hidden={false}
+          translucent={false}
+          networkActivityIndicatorVisible={true}
+        />
         <AllNavigation />
       </SafeAreaProvider>
     </>

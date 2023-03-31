@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import Imagebacground from '../../../../../../components/Imagebacground';
 import Counter from '../../../../../../components/Counter';
@@ -6,6 +6,7 @@ import {COLORS} from '../../../../../../constants/Colors';
 import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
 import NavigationService from '../../../../../../navigation/NavigationScren';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
+import Text from '../../../../../../constants/Text';
 
 const EditTarget = () => {
   const [addValue, setAdValue] = useState(0);

@@ -2,13 +2,13 @@ import {
   Dimensions,
   Platform,
   StyleSheet,
-  Text,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../../../../constants/Colors';
+import Text from '../../../../../../constants/Text';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 type propsType = {

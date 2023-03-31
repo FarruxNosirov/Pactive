@@ -1,10 +1,4 @@
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Imagebacground from '../../../components/Imagebacground';
 import Hexagon from '../../../components/Hexagon';
@@ -101,11 +95,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%',
     position: 'absolute',
-    zIndex: 10,
+    zIndex: 11,
   },
   heroHeaderContent: {
     alignItems: 'center',
     height: '50%',
+    zIndex: 1,
   },
   topHeroHeaderRow: {
     flex: 1,

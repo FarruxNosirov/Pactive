@@ -1,9 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
+import BackEditHeader from '../../../components/BackEditHeader';
 import Imagebacground from '../../../components/Imagebacground';
 import {COLORS} from '../../../constants/Colors';
-import GoBacknavbar from '../../../components/gobacknavbar/goBacknavbar';
-import BackEditHeader from '../../../components/BackEditHeader';
 import NavigationService from '../../../navigation/NavigationScren';
 import NoPactsView from './noPactsView';
 

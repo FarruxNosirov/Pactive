@@ -1,8 +1,9 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import DefaultInput from './defaultInput/DefaultInput';
 import {COLORS} from '../constants/Colors';
 import IconsDown from 'react-native-vector-icons/Entypo';
+import Text from '../constants/Text';
 type propsType = {
   title?: string;
   inputTitle?: string;

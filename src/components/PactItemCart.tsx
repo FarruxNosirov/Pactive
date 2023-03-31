@@ -1,17 +1,16 @@
+import {useNavigation} from '@react-navigation/native';
+import React from 'react';
 import {
   Dimensions,
   Image,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
-import Imagebacground from './Imagebacground';
 import {COLORS} from '../constants/Colors';
-import NavigationService from '../navigation/NavigationScren';
-import {useNavigation} from '@react-navigation/native';
 import {AllRoutes} from '../routes/AllRoutes';
+import Imagebacground from './Imagebacground';
+import Text from '../constants/Text';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TILE_WIDTH = Math.floor(SCREEN_WIDTH / 2) - 15;
 const TILE_HEIGHT = Math.floor(TILE_WIDTH * 1.17);

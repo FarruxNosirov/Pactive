@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import RadioGroup from '../../../../../../components/radioGroup/RadioGroup';
 import {COLORS} from '../../../../../../constants/Colors';
 import SwitchPro from './SwitchPro';
 import Target from './Target';
 import MesseageActive from '../../../../../../components/MesseageActive';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
+import Text from '../../../../../../constants/Text';
 
 type propsType = {
   walkingData?: any;

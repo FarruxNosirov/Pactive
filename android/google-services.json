@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "224437516150-qaiie8aofgdfkorn5c055trgjvof5qre.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.koicapital.pactive",
+            "certificate_hash": "292a172e8a42d67768bf0db277eb8b8977160d48"
+          }
+        },
+        {
           "client_id": "224437516150-u5v7jnm96nh00ckhhtf6k29gtcqigirp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

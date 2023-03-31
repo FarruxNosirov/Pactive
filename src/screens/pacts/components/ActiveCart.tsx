@@ -1,11 +1,4 @@
-import {
-  Dimensions,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Text from '../../../constants/Text';
 import Imagebacground from '../../../components/Imagebacground';

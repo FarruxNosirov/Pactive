@@ -41,14 +41,12 @@ const Login = (props: FieldProps) => {
       setLoading(false);
       if (!!confirmation) {
         navigation.navigate(AllRoutes.PinNumber as never);
-        store.auth.setConfirm(confirmation);
+        store.auth.setConfirm(confirm);
       }
     } catch (error) {
       console.log(error);
     }
   };
-
-  console.log(JSON.stringify(confirm, null, 2));
 
   return (
     <View style={[styles.container]}>

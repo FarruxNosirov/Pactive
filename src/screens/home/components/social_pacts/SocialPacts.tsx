@@ -1,19 +1,16 @@
+import {useNavigation} from '@react-navigation/native';
+import React from 'react';
 import {
   Dimensions,
   FlatList,
-  Image,
-  ImageBackground,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
-import {COLORS} from '../../../../constants/Colors';
 import PactItemCart from '../../../../components/PactItemCart';
+import {COLORS} from '../../../../constants/Colors';
+import Text from '../../../../constants/Text';
 import NavigationService from '../../../../navigation/NavigationScren';
-import {useNavigation} from '@react-navigation/native';
-import {AllRoutes} from '../../../../routes/AllRoutes';
 const data = [
   {id: 0, name: 'salom salom salom salom '},
   {id: 1, name: 'salom salom salom salom '},

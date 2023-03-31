@@ -11,6 +11,8 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {AllRoutes} from '../../../routes/AllRoutes';
 import {observer} from 'mobx-react';
 import useRootStore from '../../../hooks/useRootStore';
+import Spinner from 'react-native-loading-spinner-overlay/lib';
+import NavigationService from '../../../navigation/NavigationScren';
 
 const PinNumber = () => {
   const CELL_COUNT = 6;
@@ -21,22 +23,25 @@ const PinNumber = () => {
     value,
     setValue,
   });
+  const [loading, setLoading] = useState(false);
   let disiblet = true;
   if (value.length === 6) {
     disiblet = false;
   }
-  const params = useRoute();
-  console.log(JSON.stringify(params.params, null, 2));
+
   const navigation = useNavigation();
 
   const siginIn = async () => {
     try {
+      setLoading(true);
       const data = await store.auth.confirm.confirm(value);
-      if (!!data) {
-        navigation.navigate(AllRoutes.OnboardingScreen as never);
-      }
+      // if (!!data) {
+      //   navigation.navigate(AllRoutes.OnboardingScreen as never);
+      // }
+      navigation.navigate(AllRoutes.OnboardingScreen as never);
     } catch (error) {
       console.log('Invalid code.', error);
+      setLoading(false);
     }
   };
 
@@ -55,7 +60,7 @@ const PinNumber = () => {
 
           <View style={styles.signInContentResend}>
             <Text style={styles.registerHeadlineLabel}>Sent to</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => NavigationService.goBack()}>
               <Text style={styles.signInContentResendChangeLink}>CHANGE</Text>
             </TouchableOpacity>
           </View>
@@ -94,6 +99,7 @@ const PinNumber = () => {
             <Text style={styles.buttonPrimaryLabel}>GET STARTED</Text>
           </TouchableOpacity>
         </View>
+        <Spinner visible={loading} textContent={''} textStyle={{}} />
       </ImageBackground>
     </View>
   );

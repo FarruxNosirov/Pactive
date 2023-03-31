@@ -1,7 +1,8 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
 import {Switch} from 'react-native-switch';
 import {COLORS} from '../../../../../../constants/Colors';
+import Text from '../../../../../../constants/Text';
 
 const SwitchPro = () => {
   const [checkBox, setCheckBox] = useState({

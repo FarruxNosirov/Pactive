@@ -1,14 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
+import BottomHeight from '../../../../../../components/BottomHeight';
+import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
+import MesseageActive from '../../../../../../components/MesseageActive';
+import BirthOfData from '../../../../../../components/birthOfData/BirthOfData';
+import DefaultInput from '../../../../../../components/defaultInput/DefaultInput';
 import EditImageBack from '../../../../../../components/editImageBack/EditImageBack';
 import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../../../../../constants/Colors';
 import NavigationService from '../../../../../../navigation/NavigationScren';
-import DefaultInput from '../../../../../../components/defaultInput/DefaultInput';
-import BottomHeight from '../../../../../../components/BottomHeight';
-import BirthOfData from '../../../../../../components/birthOfData/BirthOfData';
-import MesseageActive from '../../../../../../components/MesseageActive';
-import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
 
 const EditPact = () => {
   const [date, setDate] = useState(new Date());

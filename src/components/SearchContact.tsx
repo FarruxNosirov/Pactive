@@ -1,13 +1,8 @@
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {StyleSheet, TextInput, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
 import {COLORS} from '../constants/Colors';
 import {fontBold, fontNormal} from '../constants/Fonts';
+import Text from '../constants/Text';
 type propsType = {
   placeholder?: string;
   btnName?: string;

@@ -1,16 +1,14 @@
-import {ScrollView, StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
+import {ScrollView, StyleSheet, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import {Rating} from 'react-native-ratings';
+import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
+import Imagebacground from '../../../../components/Imagebacground';
+import DefaultInput from '../../../../components/defaultInput/DefaultInput';
 import GoBacknavbar from '../../../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../../../constants/Colors';
-import Imagebacground from '../../../../components/Imagebacground';
-import {Rating} from 'react-native-ratings';
-import LinearGradient from 'react-native-linear-gradient';
-import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
-import DefaultInput from '../../../../components/defaultInput/DefaultInput';
-import NavigationService from '../../../../navigation/NavigationScren';
 import Text from '../../../../constants/Text';
-import starIon from 'react-native-vector-icons/Feather';
-
+import NavigationService from '../../../../navigation/NavigationScren';
 const Feedback = () => {
   const [rate, setRate] = useState(0);
   const INTRO_TEXT =
@@ -62,11 +60,12 @@ const Feedback = () => {
             ratingColor={COLORS.pactiveGreen}
             ratingBackgroundColor="grey"
             onFinishRating={(e: number) => setRate(e)}
+            tintColor="#fff"
             startingValue={rate}
             type="custom"
-            // style={{
-            //   marginVertical: 27,
-            // }}
+            style={{
+              marginVertical: 27,
+            }}
             showRating={false}
           />
         </View>

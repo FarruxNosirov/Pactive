@@ -1,7 +1,6 @@
-import {StyleSheet, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
 import {COLORS} from '../../../constants/Colors';
-import Text from '../../../constants/Text';
 import NoPactsView from '../components/noPactsView';
 
 const PactInvite = () => {

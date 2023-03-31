@@ -4,7 +4,6 @@ import {
   ImageBackground,
   Platform,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -13,6 +12,7 @@ import Hexagon from '../Hexagon';
 import {COLORS} from '../../constants/Colors';
 import {PenIcon} from '../../assets/icons/iconst';
 import {launchImageLibrary} from 'react-native-image-picker';
+import Text from '../../constants/Text';
 
 const height = Dimensions.get('window').height;
 

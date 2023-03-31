@@ -1,6 +1,7 @@
-import {ImageBackground, StyleSheet, Text, View} from 'react-native';
+import {ImageBackground, StyleSheet, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../constants/Colors';
+import Text from '../constants/Text';
 type propsType = {
   width?: string | number;
   height?: string | number;
