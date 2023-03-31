@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, View} from 'react-native';
 import BottomHeight from '../../../../../../components/BottomHeight';
 import Counter from '../../../../../../components/Counter';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
@@ -7,6 +7,7 @@ import Imagebacground from '../../../../../../components/Imagebacground';
 import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
 import {COLORS} from '../../../../../../constants/Colors';
 import NavigationService from '../../../../../../navigation/NavigationScren';
+import Text from '../../../../../../constants/Text';
 const Data = [{id: 0, name: ''}];
 const SetTarget = () => {
   const [addValue, setAdValue] = useState(0);

@@ -1,8 +1,9 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {COLORS} from '../../../../../constants/Colors';
 import {fontBold} from '../../../../../constants/Fonts';
+import Text from '../../../../../constants/Text';
 type propsType = {
   btnName?: string;
   iconName: string;

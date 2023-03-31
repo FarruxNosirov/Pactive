@@ -1,9 +1,10 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../../../../../constants/Colors';
 
 import {SmallShareButton} from './ShareButton';
 import Config from 'react-native-config';
+import Text from '../../../../../../constants/Text';
 
 const MesseageItemMe = ({item, currentMessage}: any) => {
   const user = {

@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import Hexagon from '../../../../../../components/Hexagon';
 import {COLORS} from '../../../../../../constants/Colors';
@@ -6,6 +6,7 @@ import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {fontBold} from '../../../../../../constants/Fonts';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
 import NavigationService from '../../../../../../navigation/NavigationScren';
+import Text from '../../../../../../constants/Text';
 
 const Members = () => {
   return (

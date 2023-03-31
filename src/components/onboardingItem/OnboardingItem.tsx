@@ -1,6 +1,7 @@
-import {View, Text, Dimensions, Image} from 'react-native';
+import {View, Dimensions, Image} from 'react-native';
 import React from 'react';
 import {Style} from './Style';
+import Text from '../../constants/Text';
 
 const {width} = Dimensions.get('window');
 type propsType = {

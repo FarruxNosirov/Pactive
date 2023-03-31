@@ -1,14 +1,9 @@
 import React from 'react';
-import {
-  Dimensions,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Dimensions, ImageBackground, StyleSheet, View} from 'react-native';
 
 import DefaultButton from '../../../../components/DefaultButton/DefaultButton';
 import NavigationService from '../../../../navigation/NavigationScren';
+import Text from '../../../../constants/Text';
 const height = Dimensions.get('window').height;
 
 const CreatePactBacground = () => {

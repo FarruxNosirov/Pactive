@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import {TouchableOpacity, Text} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {View} from 'react-native';
 
 import {COLORS} from '../../constants/Colors';
 
 import {styles} from './style';
+import Text from '../../constants/Text';
 type propsType = {
   value?: any;
   isPress?: boolean;

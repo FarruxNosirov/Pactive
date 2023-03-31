@@ -1,4 +1,4 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import Svg, {
   ClipPath,
@@ -11,6 +11,7 @@ import Svg, {
 import ImagePerson from './ImagePerson';
 import {PenIcon, PersonIcon} from '../assets/icons/iconst';
 import {COLORS} from '../constants/Colors';
+import Text from '../constants/Text';
 
 type propsType = {
   imageUrl?: any;

@@ -1,13 +1,7 @@
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../constants/Colors';
+import Text from '../constants/Text';
 
 type propsType = {
   btnValue?: any;

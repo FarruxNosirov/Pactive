@@ -1,23 +1,18 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Keyboard,
-  ScrollView,
-  KeyboardAvoidingView,
-  TouchableWithoutFeedback,
-  TextInput,
-  Platform,
-  TouchableOpacity,
-} from 'react-native';
 import React from 'react';
-import {COLORS} from '../../../../../constants/Colors';
-import GoBacknavbar from '../../../../../components/gobacknavbar/goBacknavbar';
-import NavigationService from '../../../../../navigation/NavigationScren';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import DefaultButton from '../../../../../components/DefaultButton/DefaultButton';
 import Imagebacground from '../../../../../components/Imagebacground';
 import DefaultInput from '../../../../../components/defaultInput/DefaultInput';
-import DefaultButton from '../../../../../components/DefaultButton/DefaultButton';
-import LinearGradient from 'react-native-linear-gradient';
+import GoBacknavbar from '../../../../../components/gobacknavbar/goBacknavbar';
+import {COLORS} from '../../../../../constants/Colors';
+import NavigationService from '../../../../../navigation/NavigationScren';
 
 const ReportPact = () => {
   return (

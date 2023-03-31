@@ -1,7 +1,7 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {COLORS} from '../../../constants/Colors';
+import {FlatList, StyleSheet, View} from 'react-native';
 import PactItemCart from '../../../components/PactItemCart';
+import {COLORS} from '../../../constants/Colors';
 const data = [
   {id: 0, name: 'salom salom salom salom  '},
   {id: 1, name: 'salom salom salom salom '},

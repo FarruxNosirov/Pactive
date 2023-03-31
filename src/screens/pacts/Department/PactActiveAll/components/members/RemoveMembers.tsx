@@ -1,13 +1,13 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Imagebacground from '../../../../../../components/Imagebacground';
-import {COLORS} from '../../../../../../constants/Colors';
-import ContactItem from './ContactItem';
-import {HelpData} from '../../../../../help/components/DataHelp';
-import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
-import NavigationService from '../../../../../../navigation/NavigationScren';
+import {FlatList, StyleSheet, View} from 'react-native';
 import BottomHeight from '../../../../../../components/BottomHeight';
 import DefaultButton from '../../../../../../components/DefaultButton/DefaultButton';
+import Imagebacground from '../../../../../../components/Imagebacground';
+import GoBacknavbar from '../../../../../../components/gobacknavbar/goBacknavbar';
+import {COLORS} from '../../../../../../constants/Colors';
+import NavigationService from '../../../../../../navigation/NavigationScren';
+import {HelpData} from '../../../../../help/components/DataHelp';
+import ContactItem from './ContactItem';
 
 const RemoveMembers = () => {
   return (

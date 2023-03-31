@@ -8,12 +8,6 @@ export default class AuthStore {
   validationCode: string = '';
   confirm: any = null;
 
-  // setValidationCode = (code: string) => {
-  //   runInAction(() => {
-  //     this.validationCode = code;
-  //   });
-  // };
-
   setConfirm = (conform: any) => {
     this.confirm = conform;
   };

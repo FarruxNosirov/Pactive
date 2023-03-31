@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  Text,
   View,
   ImageBackground,
   TouchableOpacity,
@@ -32,6 +31,7 @@ import {
 } from '../../../../../components/HexagonOptionIcons';
 import Measurement from './components/Measurement';
 import {launchImageLibrary} from 'react-native-image-picker';
+import Text from '../../../../../constants/Text';
 
 const DATA = [
   {

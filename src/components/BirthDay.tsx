@@ -1,7 +1,8 @@
-import {Platform, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Platform, StyleSheet, TextInput, View} from 'react-native';
 import React from 'react';
 import DatePicker from 'react-native-date-picker';
 import {COLORS} from '../constants/Colors';
+import Text from '../constants/Text';
 type PropsType = {
   date: Date;
   openDate?: any;

@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import {
   FlatList,
-  Image,
   StyleSheet,
   TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
-import {COLORS} from '../../../../../../constants/Colors';
 import IconMessage from 'react-native-vector-icons/Entypo';
 import IconImage from 'react-native-vector-icons/Feather';
+import {COLORS} from '../../../../../../constants/Colors';
 import MesseageItemMe from './MesseageItemMe';
 
 const Data = [

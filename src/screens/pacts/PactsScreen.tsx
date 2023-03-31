@@ -25,30 +25,54 @@
 //   },
 // });
 
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {
   Animated,
   Dimensions,
   SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import DefaultButton from '../../components/DefaultButton/DefaultButton';
+import {COLORS} from '../../constants/Colors';
+import Text from '../../constants/Text';
 import PactActive from './Department/PactActive';
 import PactsHeader from './components/PactsHeader';
-import {COLORS} from '../../constants/Colors';
 import TabStacks from '../../navigation/stacks/TabStacks';
 
-function Tabs({style}: any) {
+function Tabs({style, setActive, active}: any) {
   return (
     <Animated.ScrollView
       horizontal
       style={[styles.tabs, style]}
       scrollEnabled={false}>
-      <DefaultButton title="siginIn" />
+      <TouchableOpacity
+        onPress={() => setActive({...active})}
+        style={{
+          width: '33%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>Active</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '33%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>Invite</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          width: '33%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+        <Text>Social</Text>
+      </TouchableOpacity>
     </Animated.ScrollView>
   );
 }
@@ -57,7 +81,7 @@ const IMAGE_HEIGHT = height / 1.9;
 
 const PactsScreen = () => {
   const statusBarHeight = 0;
-  const tabsScroll = new Animated.Value(0);
+  const tabsScroll = useRef(new Animated.Value(0)).current;
 
   const tabsTop = tabsScroll.interpolate({
     inputRange: [0, IMAGE_HEIGHT],
@@ -65,10 +89,13 @@ const PactsScreen = () => {
     extrapolateLeft: 'extend',
     extrapolateRight: 'clamp',
   });
-
+  const [active, setActive] = useState({
+    active: false,
+    invite: false,
+    Social: false,
+  });
   return (
     <>
-      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.container}>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -86,8 +113,14 @@ const PactsScreen = () => {
           showsVerticalScrollIndicator={false}>
           <PactsHeader />
           <TabStacks />
+
+          {/* <PactActive /> */}
         </ScrollView>
-        {/* <Tabs style={{transform: [{translateY: tabsTop}]}} /> */}
+        {/* <Tabs
+          style={{transform: [{translateY: tabsTop}]}}
+          setActive={setActive}
+          active={active}
+        /> */}
       </SafeAreaView>
     </>
   );
@@ -111,6 +144,7 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     backgroundColor: COLORS.pactiveHeaderColor,
+    height: 50,
   },
   tabText: {
     fontSize: 20,

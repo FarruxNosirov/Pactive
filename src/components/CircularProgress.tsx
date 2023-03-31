@@ -6,7 +6,7 @@ import {Dimensions, StyleSheet, View} from 'react-native';
 import {fontCondensed, fontNormal} from '../constants/Fonts';
 import Text from '../constants/Text';
 
-const {height, width} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   circularProgressWrapper: {

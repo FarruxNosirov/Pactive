@@ -1,7 +1,7 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import NavigationService from '../../navigation/NavigationScren';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../constants/Colors';
+import Text from '../../constants/Text';
 type propsType = {
   onPress?: () => void | undefined;
   name?: string;

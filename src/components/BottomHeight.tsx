@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, View} from 'react-native';
 
 const BottomHeight = ({height}: any) => {
   return <View style={{width: '100%', height: height}}></View>;

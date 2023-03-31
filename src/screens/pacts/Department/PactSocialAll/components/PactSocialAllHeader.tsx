@@ -1,17 +1,15 @@
+import React from 'react';
 import {
-  Animated,
   Dimensions,
   Image,
-  SafeAreaView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useRef} from 'react';
-import Imagebacground from '../../../../../components/Imagebacground';
 import DefaultButton from '../../../../../components/DefaultButton/DefaultButton';
+import Imagebacground from '../../../../../components/Imagebacground';
 import {COLORS} from '../../../../../constants/Colors';
+import Text from '../../../../../constants/Text';
 
 const height = Dimensions.get('window').height;
 // const DynamicHeader = ({animHeaderValue}) => {

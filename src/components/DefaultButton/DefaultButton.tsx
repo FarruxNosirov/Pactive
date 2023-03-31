@@ -3,11 +3,11 @@ import {
   ActivityIndicator,
   GestureResponderEvent,
   StyleSheet,
-  Text,
   TouchableOpacity,
 } from 'react-native';
 import {COLORS} from '../../constants/Colors';
 import {fontBold} from '../../constants/Fonts';
+import Text from '../../constants/Text';
 
 type Props = {
   title?: string;

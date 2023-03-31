@@ -1,16 +1,10 @@
 import React, {useState} from 'react';
-import {
-  Dimensions,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Dimensions, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {COLORS} from '../../../constants/Colors';
 
 import HexagonTrackPage from '../../../components/HexagonTrackPage';
 import Counter from '../../../components/Counter';
+import Text from '../../../constants/Text';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const TrackElements = () => {

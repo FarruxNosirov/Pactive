@@ -1,20 +1,14 @@
 import React, {useState} from 'react';
-import {
-  FlatList,
-  ScrollView,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, StyleSheet, TouchableOpacity, View} from 'react-native';
 import BackEditHeader from '../../../../components/BackEditHeader';
-import {COLORS} from '../../../../constants/Colors';
-import PactActiveAllHeader from './components/PactActiveAllHeader';
-import NavigationService from '../../../../navigation/NavigationScren';
-import Text from '../../../../constants/Text';
-import InfoPact from './components/infoPact/InfoPact';
 import BottomHeight from '../../../../components/BottomHeight';
-import Messages from './components/messages/Messages';
+import {COLORS} from '../../../../constants/Colors';
+import Text from '../../../../constants/Text';
+import NavigationService from '../../../../navigation/NavigationScren';
+import PactActiveAllHeader from './components/PactActiveAllHeader';
+import InfoPact from './components/infoPact/InfoPact';
 import Members from './components/members/Members';
+import Messages from './components/messages/Messages';
 
 const PactActiveAll = () => {
   const [active, setActive] = useState({
