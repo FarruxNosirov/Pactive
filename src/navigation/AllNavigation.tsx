@@ -23,6 +23,7 @@ import BottomStacks from './stacks/BottomStacks';
 import SetTarget from '../screens/pacts/Department/PactActiveAll/components/members/SetTarget';
 import RemoveMembers from '../screens/pacts/Department/PactActiveAll/components/members/RemoveMembers';
 import ReportPact from '../screens/pacts/Department/PactSocialAll/components/ReportPact';
+import ErrorModal from '../components/ErrorModal';
 
 let Stack = createNativeStackNavigator();
 const AllNavigation = () => {
@@ -32,7 +33,7 @@ const AllNavigation = () => {
       style={{flex: 1, marginTop: insets.top, backgroundColor: COLORS.white}}>
       <NavigationContainer ref={NavigationService.ref}>
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          {/* <Stack.Screen name={AllRoutes.AUTH} component={AuthStacks} /> */}
+          <Stack.Screen name={AllRoutes.AUTH} component={AuthStacks} />
           <Stack.Screen
             name={AllRoutes.BottomStacks}
             component={BottomStacks}
@@ -61,6 +62,8 @@ const AllNavigation = () => {
           />
           <Stack.Screen name={AllRoutes.ReportPact} component={ReportPact} />
         </Stack.Navigator>
+
+        <ErrorModal />
       </NavigationContainer>
     </View>
   );

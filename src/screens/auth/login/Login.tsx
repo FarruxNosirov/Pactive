@@ -45,6 +45,7 @@ const Login = (props: FieldProps) => {
       }
     } catch (error) {
       console.log(error);
+      store.error.friendlyErrorMessage(error);
     }
   };
 

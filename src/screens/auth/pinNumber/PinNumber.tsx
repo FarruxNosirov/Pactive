@@ -13,6 +13,7 @@ import {observer} from 'mobx-react';
 import useRootStore from '../../../hooks/useRootStore';
 import Spinner from 'react-native-loading-spinner-overlay/lib';
 import NavigationService from '../../../navigation/NavigationScren';
+import ErrorModal from '../../../components/ErrorModal';
 
 const PinNumber = () => {
   const CELL_COUNT = 6;
@@ -39,6 +40,9 @@ const PinNumber = () => {
       //   navigation.navigate(AllRoutes.OnboardingScreen as never);
       // }
       navigation.navigate(AllRoutes.OnboardingScreen as never);
+      if (!data) {
+        // <ErrorModal errorText="Lorem10" />;
+      }
     } catch (error) {
       console.log('Invalid code.', error);
       setLoading(false);
